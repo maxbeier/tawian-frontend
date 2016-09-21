@@ -1,0 +1,580 @@
+/**
+ * Progress Bar
+ */
+
+.progress-bar {
+  height: .5rem;
+  background-color: $grey-300;
+
+  &.progress-bar-show-percent {
+    margin-top: 2rem;
+
+    & > div {
+      &:before { // Arrow
+        content: '';
+        border: 6px solid transparent;
+        border-top-color: $grey;
+        position: absolute;
+        top: -12px;
+        right: -6px;
+      }
+      &:after { // Text
+        color: $grey-600;
+        content: attr(data-filled);
+        display: block;
+        font-size: 12px;
+        white-space: nowrap;
+        position: absolute;
+        border: 6px solid transparent;
+        top: -38px;
+        right: 0;
+        transform: translateX(50%);
+      }
+    }
+  }
+
+  & > div { // Filling
+    position: relative;
+    height: 100%;
+    width: 0;
+    background-color: $grey;
+    transition: width .3s ease;
+  }
+
+  &.progress-success > div { background-color: $green; }
+  &.progress-error > div { background-color: $red; }
+  &.progress-warning > div { background-color: $orange; }
+  &.progress-info > div { background-color: $cyan; }
+}
+
+
+/**
+ * Table
+ */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+
+  td,
+  th {
+    vertical-align: top;
+    border: $border-width solid $grey-300;
+    padding: .5rem .5rem .4rem;
+  }
+  thead th {
+    color: $grey-800;
+    text-align: center;
+    background-color: $grey-200;
+  }
+
+  caption {
+    caption-side: bottom;
+    padding-top: .5rem;
+    color: $grey;
+  }
+
+  // tbody td:first-child {
+  //   font-weight: 700;
+  //   color: $grey-800;
+  // }
+}
+
+/**
+ * Code
+ */
+
+ code {
+   background-color: $grey-200;
+   padding: .25em .5em;
+   border-radius: 2px;
+   color: $black;
+ }
+
+ pre {
+   display: block;
+   margin-top: 0;
+   padding: 1rem;
+   border: $border-width solid $grey-300;
+   border-radius: $button-radius;
+   white-space: pre;
+   white-space: pre-wrap;
+   word-wrap: break-word;
+   word-break: break-all;
+   page-break-inside: avoid;
+ }
+
+ pre code {
+   padding: 0;
+   color: inherit;
+   background-color: transparent;
+ }
+
+/**
+ * List Group
+ */
+
+.list-group {
+  padding: 0;
+  border: $border-width solid $grey-300;
+  border-radius: $button-radius;
+
+  & > * {
+    display: block;
+    margin: 0;
+    padding: .5rem .5rem .35rem;
+  }
+
+  & > li:before { display: none; }
+
+  & > *:not(:last-child) {
+    border-bottom: $border-width solid $grey-300;
+  }
+
+  & > .disabled {
+    color: $grey;
+    cursor: not-allowed;
+    background-color: $grey-100;
+  }
+
+  & > .active {
+    color: $white;
+    background-color: $blue;
+  }
+}
+
+/**
+ * Form
+ */
+
+ @mixin form-label ($color) {
+   .form-label {
+      color: $color;
+      border-color: $color;
+   }
+
+   .help-block { color: $color; }
+ }
+
+.form-group {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+  margin-bottom: 2rem;
+}
+
+.form-success { @include form-label($green); }
+.form-info { @include form-label($cyan); }
+.form-warning { @include form-label($orange); }
+.form-error { @include form-label($red); }
+
+.form-label {
+  order: 1;
+  position: relative;
+  width: $form-label-width;
+  height: 2rem;
+  color: $grey-800;
+  border-bottom: $form-border-width solid $grey-300;
+  line-height: 2rem;
+}
+
+.form-control {
+  flex: 1;
+  order: 2;
+  min-height: 2rem;
+  width: calc(100% - #{$form-label-width});
+  padding: 0 1rem;
+  border: none;
+  border-bottom: $form-border-width solid $grey-300;
+  outline: none;
+  background-color: transparent;
+
+  &:focus {
+    border-color: $grey-500;
+  }
+
+  label + label { padding-left: 2rem; }
+}
+
+.help-block {
+  order: 3;
+  min-width: 100%;
+  margin-top: .5rem;
+  padding-left: 1rem + $form-label-width;
+  color: $grey;
+}
+
+textarea.form-control {
+  height: auto;
+  min-height: 2rem;
+  padding-top: .25rem;
+  padding-left: calc(1rem - $form-border-width);
+  // resize: none;
+  border-bottom: $form-border-width solid $grey-300;
+  border-left: $form-border-width solid $grey-300;
+
+  & + .form-label:before { // paint over little border
+    position: absolute;
+    content: '';
+    width: $form-border-width;
+    background-color: $white;
+    right: -$form-border-width;
+    top: 0;
+    bottom: 0;
+  }
+}
+
+select.form-control {
+  padding: 0 1rem;
+  border-radius: 0;
+  background-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+}
+
+.ascii {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  &:before { font-size: 1.2rem; }
+  &:focus {
+    outline: none;
+    text-shadow: 0 0 3px $black;
+  }
+}
+
+input[type="checkbox"].ascii {
+  &:before { content: "☐"; }
+  &:checked:before { content: "☑︎"; }
+}
+
+input[type="radio"].ascii {
+  &:before { content: "◯"; }
+  &:checked:before { content: "●"; }
+}
+
+.form-control:disabled,
+.form-control:disabled + .form-label {
+  color: $grey-400;
+  cursor: not-allowed;
+}
+
+.form-control[readonly],
+.form-control[readonly] + .form-label {
+  color: $grey;
+}
+
+.form-control:required + .form-label:after {
+  content: " *";
+  color: $red-400;
+}
+
+/**
+ * Buttons
+ */
+
+ @mixin button ($color, $hover-color) {
+   color: $white;
+   background-color: $color;
+   border: $border-width solid $color;
+
+   &:hover, &:focus:not(.btn-ghost) {
+     background-color: $hover-color;
+     border-color: $hover-color;
+   }
+ }
+
+ @mixin button-ghost ($color, $hover-color) {
+   border-color: $color;
+   color: $color;
+
+   &:hover, &:focus {
+     border-color: $hover-color;
+     color: $hover-color;
+   }
+ }
+
+.btn {
+  position: relative;
+  padding: .75rem 1.25rem .7rem;
+  border-radius: $button-radius;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+  line-height: 1;
+
+  &:active {
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+  }
+
+  &.btn-ghost {
+    @include button-ghost ($grey-600, $grey-800);
+    background-color: transparent;
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}
+
+.btn-block {
+  width: 100%;
+  // display: flex;
+}
+
+.btn-link {
+  border: $border-width solid transparent;
+  background-color: transparent;
+  color: $blue;
+
+  &:hover { color: $blue-700; }
+}
+
+.btn-default {
+  @include button ($grey-200, $grey-300);
+  color: $grey-800;
+}
+
+.btn-success {
+  @include button ($green, $green-600);
+
+  &.btn-ghost {
+    @include button-ghost ($green, $green-700);
+  }
+}
+
+.btn-error {
+  @include button ($red, $red-600);
+
+  &.btn-ghost {
+    @include button-ghost ($red, $red-700);
+  }
+}
+
+.btn-warning {
+  @include button ($orange, $orange-600);
+
+  &.btn-ghost {
+    @include button-ghost ($orange, $orange-700);
+  }
+}
+
+.btn-info {
+  @include button ($cyan, $cyan-600);
+
+  &.btn-ghost {
+    @include button-ghost ($cyan, $cyan-700);
+  }
+}
+
+.btn-primary {
+  @include button ($blue, $blue-600);
+
+  &.btn-ghost {
+    @include button-ghost ($blue, $blue-700);
+  }
+}
+
+.btn-group {
+  overflow: auto;
+  display: inline-flex;
+  flex-wrap: wrap;
+  vertical-align: top;
+
+  .btn {
+    flex-grow: 1;
+    border-radius: 0;
+    word-break: break-all;
+    word-break: break-word;
+
+    &:first-child { border-radius: $button-radius 0 0 $button-radius; }
+    &:last-child { border-radius: 0 $button-radius $button-radius 0; }
+  }
+
+  .btn-ghost:not(:first-child) { margin-left: -$border-width; }
+}
+
+/**
+ * Links
+ */
+
+ a {
+   cursor: pointer;
+   color: $blue;
+   text-decoration: none;
+
+   &:hover {
+     color: $blue-700;
+     text-decoration: underline;
+   }
+ }
+
+ // From http://codepen.io/acusti/pen/gbabKQ
+ /* a.pretty {
+   background-image: linear-gradient(rgba($blue, 0.25) 0%, $blue 100%);
+   background-repeat: repeat-x;
+   background-size: 1px 1px;
+   background-position: 0 95%;
+
+   // Tweak position + thickness for high res (1.75x and up) displays
+   @media (-webkit-min-device-pixel-ratio: 1.75), (min-resolution: 168dpi) {
+     background-image: linear-gradient(rgba($blue, 0.25) 0%, $blue 100%);
+     background-position: 0 93%;
+   }
+
+   // Clear descendors from underline
+   text-shadow: 3px 0 white,
+                2px 0 white,
+                1px 0 white,
+               -1px 0 white,
+               -2px 0 white,
+               -3px 0 white;
+
+   &:hover {
+     text-decoration: none;
+     background-image: linear-gradient(to bottom, $blue-700 0%, $blue-700 100%);
+   }
+
+   // Style selected links (or else text-shadow makes it look crazy ugly)
+   // Pseudo selectors must go separately, or they break each other
+   &,
+   > * {
+     &::selection {
+       background-color: $blue-100;
+       color: $grey-900;
+       text-shadow: none;
+     }
+   }
+ } */
+
+/**
+ * Card
+ */
+
+ @mixin card ($color) {
+   border: $border-width solid $color;
+
+   .card-header {
+      color: $white;
+      background-color: $color;
+      font-weight: normal;
+   }
+ }
+
+.card {
+  border: $border-width solid $grey-300;
+  border-radius: $button-radius;
+
+  .card-header {
+    display: block;
+    padding: .5rem 1rem .35rem;
+    border-bottom: $border-width solid $grey-300;
+    background-color: $grey-200;
+    text-align: center;
+    font-weight: bold;
+    color: $grey-800;
+  }
+
+  .card-body { border: 0; }
+
+  &.card-success { @include card ($green); }
+  &.card-error { @include card ($red); }
+  &.card-warning { @include card ($cyan); }
+  &.card-info { @include card ($orange); }
+}
+
+/**
+ * Alerts
+ */
+
+ @mixin alert ($color) {
+   color: $color;
+   border-color: $color;
+ }
+
+.alert {
+  padding: .85rem 1rem .7rem;
+  border: $border-width solid $grey-300;
+  border-radius: $button-radius;
+  color: $grey-300;
+}
+
+.alert-success { @include alert ($green); }
+.alert-error   { @include alert ($red); }
+.alert-info    { @include alert ($cyan); }
+.alert-warning { @include alert ($orange); }
+/**
+ * Media
+ */
+
+.media-left {
+  display: table-cell;
+  vertical-align: top;
+  padding-right: 1rem;
+}
+
+.media-right {
+  display: table-cell;
+  vertical-align: top;
+  padding-left: 1rem;
+}
+
+.media-body {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.media-heading {
+  font-weight: 700;
+}
+
+/**
+ * Holders
+ */
+
+.placeholder,
+.avatarholder {
+  background-color: $grey-200;
+  border: $border-width solid $grey-300;
+  text-align: center;
+  color: $grey;
+  font-size: 1rem;
+}
+
+.avatarholder {
+  width: 3rem;
+  height: 3rem;
+  line-height: 3rem;
+  font-size: 2rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &.rounded { border-radius: 50%; }
+}
+
+/**
+ * Loading
+ */
+
+.loading {
+  display: inline-flex;
+  align-items: baseline;
+  overflow: hidden;
+  height: 1em;
+  vertical-align: top;
+}
+
+.loading::after {
+  float: right; // nur nötig, wenn text in element enthalten ist
+  line-height: 1.2em;
+  white-space: pre;
+
+  content: "\A.\A..\A...";
+  text-align: left;
+  animation: spin 2s steps(4) infinite;
+}
+
+@keyframes spin { to { transform: translateY( -4.8em); } }

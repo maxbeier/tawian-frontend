@@ -1,0 +1,157 @@
+/**
+ * From https://github.com/mrcoles/markdown-css and https://github.com/egoist/hack
+ */
+
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6,
+ li,
+ hr,
+ .hr,
+ em,
+ code,
+ blockquote {
+  &:before,
+  &:after {
+    color: $grey-400;
+  }
+ }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+code,
+blockquote,
+em,
+strong,
+code {
+  font-size: 1rem;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+code,
+blockquote,
+ol,
+ul,
+li,
+p,
+section,
+header,
+footer {
+  float: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  position: relative;
+
+  &:before {
+    position: absolute;
+    left: -1ch;
+    width: 0;
+    direction: rtl;
+    white-space: nowrap;
+  }
+}
+
+h1:before { content: "#"; }
+h2:before { content: "##"; }
+h3:before { content: "###"; }
+h4:before { content: "####"; }
+h5:before { content: "#####"; }
+h6:before { content: "######"; }
+
+
+ol { counter-reset: ol; }
+
+ul > li { padding-left: 2ch; }
+ol > li { padding-left: 3ch; }
+
+li {
+  position: relative;
+  display: block;
+
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+ul > li:before { content: "–"; }
+
+ol > li:before {
+  content: counter(ol) ".";
+  counter-increment: ol;
+}
+
+// blockquote {
+//   position: relative;
+//   padding-left: 2ch;
+//   overflow: hidden;
+// }
+
+// blockquote:after {
+//   content: ">\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>";
+//   white-space: pre;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+// }
+
+em:before,
+em:after {
+  content: "*";
+  display: inline;
+}
+
+// pre code:before,
+// pre code:after {
+//   content: '';
+// }
+
+// code {
+//   font-weight: 700;
+
+//   &:before,
+//   &:after {
+//     content: "`";
+//     display: inline;
+//   }
+// }
+
+
+hr {
+  height: 1rem;
+  margin: 1.5rem 0;
+  border: 0;
+  line-height: 1rem;
+
+  &:after {
+    display: block;
+    height: 1rem;
+    overflow: hidden;
+    content: "＊ ＊ ＊";
+    text-align: center;
+    overflow: hidden;
+    font-size: .8rem;
+  }
+}

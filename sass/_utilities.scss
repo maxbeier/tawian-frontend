@@ -1,0 +1,45 @@
+// Space and Size ---------------------------------------------
+
+.narrow { padding: 0 !important; }
+.inner { padding: 1rem !important; }
+.inner2x { padding: 2rem !important; }
+
+.top-gap { margin-top: 2rem; }
+.bottom-gap { margin-bottom: 2rem; }
+
+.pull-left { float: left; }
+.pull-right { float: right; }
+
+.full-width { width: 100%; }
+
+
+// Hiding -----------------------------------------------------
+
+.invisible { visibility: hidden !important; }
+
+.hidden { display: none !important; }
+.hidden-print {
+  @media print { display: none !important; }
+}
+
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+
+// Dashed Border ----------------------------------------------
+
+@mixin dashed ($side) {
+  padding-#{$side}: 2rem;
+  margin-#{$side}: 2rem;
+  border-#{$side}: $form-border-width dashed $grey-400;
+}
+
+.dashed-top    { @include dashed('top'); }
+.dashed-bottom { @include dashed('bottom'); }
+.dashed-left   { @include dashed('left'); }
+.dashed-right  { @include dashed('right'); }
