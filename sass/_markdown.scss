@@ -32,10 +32,9 @@ h6 {
 
   &:before {
     position: absolute;
-    left: -1ch;
-    width: 0;
-    direction: rtl;
-    white-space: nowrap;
+    left: -4.675rem;
+    width: 4rem;
+    text-align: right;
     color: $grey-400;
   }
 
