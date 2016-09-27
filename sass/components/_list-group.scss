@@ -1,0 +1,28 @@
+.list-group {
+  padding: 0;
+  border: $border-width solid $grey-300;
+  border-radius: $button-radius;
+
+  & > * {
+    display: block;
+    margin: 0;
+    padding: .5rem .5rem .4rem;
+  }
+
+  & > li:before { display: none; }
+
+  & > *:not(:last-child) {
+    border-bottom: $border-width solid $grey-300;
+  }
+
+  & > .disabled {
+    color: $grey;
+    cursor: not-allowed;
+    background-color: $grey-100;
+  }
+
+  & > .active {
+    color: $white;
+    background-color: $blue;
+  }
+}

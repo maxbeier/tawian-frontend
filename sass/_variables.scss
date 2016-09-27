@@ -1,18 +1,21 @@
+$container: 64rem;
+$breakpoint-medium: 48rem;
+$breakpoint-small: 30rem;
+
+$small: "screen and (max-width : #{$breakpoint-small})";
+$medium: "screen and (max-width : #{$breakpoint-medium})";
+$large: "screen and (min-width : #{$breakpoint-medium})";
+
 $button-radius: 2px;
 $border-width: 1px;
 $form-border-width: 2px;
 $form-label-width: 10rem;
 
+
+// Material Design Colors -------------------------------------
+
 $black: #000000;
 $white: #ffffff;
-
-$a: #545e66;
-$b: #2185c5;
-$c: #e2e0dc;
-$d: #3e454c;
-
-
-// --- Material Design Colors
 
 $red: #f44336;
 $red-50: #ffebee;

@@ -1,0 +1,16 @@
+@mixin alert ($color) {
+   color: $color;
+   border-color: $color;
+}
+
+.alert {
+  padding: .8rem 1rem .7rem;
+  border: $border-width solid $grey-300;
+  border-radius: $button-radius;
+  color: $grey-300;
+}
+
+.alert-success { @include alert ($green); }
+.alert-error   { @include alert ($red); }
+.alert-info    { @include alert ($cyan); }
+.alert-warning { @include alert ($orange); }

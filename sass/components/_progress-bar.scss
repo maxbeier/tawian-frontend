@@ -1,0 +1,44 @@
+.progress-bar {
+  height: .5rem;
+  background-color: $grey-300;
+
+  &.progress-bar-show-percent {
+    margin-top: 2rem;
+
+    & > div {
+      &:before { // Arrow
+        content: '';
+        border: 6px solid transparent;
+        border-top-color: $grey;
+        position: absolute;
+        top: -12px;
+        right: -6px;
+      }
+      &:after { // Text
+        color: $grey-600;
+        content: attr(data-filled);
+        display: block;
+        font-size: 12px;
+        white-space: nowrap;
+        position: absolute;
+        border: 6px solid transparent;
+        top: -38px;
+        right: 0;
+        transform: translateX(50%);
+      }
+    }
+  }
+
+  & > div { // Filling
+    position: relative;
+    height: 100%;
+    width: 0;
+    background-color: $grey;
+    transition: width .3s ease;
+  }
+
+  &.progress-success > div { background-color: $green; }
+  &.progress-error > div { background-color: $red; }
+  &.progress-warning > div { background-color: $orange; }
+  &.progress-info > div { background-color: $cyan; }
+}

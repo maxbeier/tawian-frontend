@@ -1,24 +1,7 @@
-/**
- * From https://github.com/mrcoles/markdown-css and https://github.com/egoist/hack
- */
+// From https://github.com/mrcoles/markdown-css and https://github.com/egoist/hack
 
- h1,
- h2,
- h3,
- h4,
- h5,
- h6,
- li,
- hr,
- .hr,
- em,
- code,
- blockquote {
-  &:before,
-  &:after {
-    color: $grey-400;
-  }
- }
+
+// Normalize -------------------------------------------------
 
 h1,
 h2,
@@ -26,34 +9,18 @@ h3,
 h4,
 h5,
 h6,
-code,
-blockquote,
-em,
-strong,
-code {
-  font-size: 1rem;
-  font-style: normal;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-code,
-blockquote,
 ol,
 ul,
 li,
-p,
-section,
-header,
-footer {
-  float: none;
+code,
+blockquote {
   margin: 0;
   padding: 0;
+  font-size: 1rem;
 }
+
+
+// Headings ---------------------------------------------------
 
 h1,
 h2,
@@ -69,6 +36,14 @@ h6 {
     width: 0;
     direction: rtl;
     white-space: nowrap;
+    color: $grey-400;
+  }
+
+  @media screen and (max-width : $container + 4rem) {
+    &:before {
+      position: static;
+      padding-right: 1ch;
+    }
   }
 }
 
@@ -79,6 +54,8 @@ h4:before { content: "####"; }
 h5:before { content: "#####"; }
 h6:before { content: "######"; }
 
+
+// Lists ------------------------------------------------------
 
 ol { counter-reset: ol; }
 
@@ -93,6 +70,7 @@ li {
     position: absolute;
     top: 0;
     left: 0;
+    color: $grey-400;
   }
 }
 
@@ -102,42 +80,6 @@ ol > li:before {
   content: counter(ol) ".";
   counter-increment: ol;
 }
-
-// blockquote {
-//   position: relative;
-//   padding-left: 2ch;
-//   overflow: hidden;
-// }
-
-// blockquote:after {
-//   content: ">\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>";
-//   white-space: pre;
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-// }
-
-em:before,
-em:after {
-  content: "*";
-  display: inline;
-}
-
-// pre code:before,
-// pre code:after {
-//   content: '';
-// }
-
-// code {
-//   font-weight: 700;
-
-//   &:before,
-//   &:after {
-//     content: "`";
-//     display: inline;
-//   }
-// }
-
 
 hr {
   height: 1rem;
@@ -152,6 +94,47 @@ hr {
     content: "＊ ＊ ＊";
     text-align: center;
     overflow: hidden;
+    color: $grey-400;
     font-size: .8rem;
   }
 }
+
+/*
+
+pre code:before,
+pre code:after {
+  content: '';
+}
+
+code {
+  font-weight: 700;
+
+  &:before,
+  &:after {
+    content: "`";
+    display: inline;
+  }
+}
+
+blockquote {
+  position: relative;
+  padding-left: 2ch;
+  overflow: hidden;
+}
+
+blockquote:after {
+  content: ">\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>";
+  white-space: pre;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+em:before,
+em:after {
+  content: "*";
+  display: inline;
+  color: $grey-400;
+}
+
+*/

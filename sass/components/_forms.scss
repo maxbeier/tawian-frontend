@@ -1,0 +1,155 @@
+// Form ------------------------------------------------------
+
+.form {
+  @media #{$small} { width: 100%; }
+}
+
+
+// Group ------------------------------------------------------
+
+.form-group {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+  margin-bottom: 2rem;
+}
+
+
+// Label ------------------------------------------------------
+
+.form-label {
+  order: 1;
+  position: relative;
+  min-width: $form-label-width;
+  height: 2rem;
+  color: $grey-800;
+  border-bottom: $form-border-width solid $grey-300;
+  line-height: 2rem;
+
+  @media #{$medium} {
+    border-bottom: none;
+    min-width: 100%;
+    flex-basis: 100%;
+  }
+}
+
+
+// Control ----------------------------------------------------
+
+.form-control {
+  flex: 1;
+  order: 2;
+  min-height: 2rem;
+  min-width: calc(100% - #{$form-label-width});
+  padding: .25rem 1rem 0;
+  border: none;
+  border-bottom: $form-border-width solid $grey-300;
+  outline: none;
+  background-color: transparent;
+
+  &:focus { border-color: $grey-500; }
+
+  label + label { padding-left: 2rem; }
+
+  @media #{$medium} {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 100%;
+    flex-basis: 100%;
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+
+    label {
+      // flex: 1;
+      padding-right: 1rem;
+      // white-space: nowrap;
+    }
+
+    label + label { padding-left: 0; }
+  }
+}
+
+textarea.form-control {
+  height: auto;
+  min-height: 2rem;
+  padding-left: calc(1rem - #{$form-border-width});
+  // resize: none;
+  border-bottom: $form-border-width solid $grey-300;
+  border-left: $form-border-width solid $grey-300;
+
+  & + .form-label:before { // paint over the little border
+    position: absolute;
+    content: '';
+    width: $form-border-width;
+    background-color: $white;
+    right: -$form-border-width;
+    top: 0;
+    bottom: 0;
+
+    @media #{$medium} { display: none; }
+  }
+
+  @media #{$medium} {
+    padding-left: 0;
+    border-left: none;
+  }
+}
+
+select.form-control {
+  padding: 0 1rem;
+  border-radius: 0;
+  background-color: transparent;
+  appearance: none;
+
+  @media #{$medium} { padding: 0; }
+}
+
+.form-control[type="file"] { padding-top: 0; }
+
+
+// States -----------------------------------------------------
+
+@mixin state ($color, $focus-color) {
+  .help-block,
+  .form-label { color: $color; }
+  .form-label { border-color: $color; }
+  .form-control { border-bottom-color: $color; }
+  .form-control:focus { border-bottom-color: $focus-color; }
+}
+
+.form-success { @include state ($green, $green-800); }
+.form-info    { @include state ($cyan, $cyan-800); }
+.form-warning { @include state ($orange, $orange-800); }
+.form-error   { @include state ($red, $red-800); }
+
+.form-control:disabled,
+.form-control:disabled + .form-label {
+  cursor: not-allowed;
+  color: $grey-400;
+  -webkit-text-fill-color: $grey-400; // Safari
+}
+
+.form-control[readonly],
+.form-control[readonly] + .form-label {
+  color: $grey;
+}
+
+.form-control:required + .form-label:after {
+  content: " *";
+  color: $red-400;
+}
+
+
+// Help Block -------------------------------------------------
+
+.help-block {
+  order: 3;
+  min-width: 100%;
+  flex-basis: 100%;
+  margin-top: .5rem;
+  padding-left: 1rem + $form-label-width;
+  color: $grey;
+
+  @media #{$medium} { padding-left: 0; }
+}

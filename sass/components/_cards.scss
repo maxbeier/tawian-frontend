@@ -1,0 +1,32 @@
+@mixin card ($color) {
+  border: $border-width solid $color;
+
+  .card-header {
+    color: $white;
+    background-color: $color;
+    border-bottom-color: $color;
+    font-weight: normal;
+  }
+}
+
+.card {
+  border: $border-width solid $grey-300;
+  border-radius: $button-radius;
+
+  .card-header {
+    display: block;
+    padding: .55rem 1rem .45rem;
+    border-bottom: $border-width solid $grey-300;
+    background-color: $grey-200;
+    text-align: center;
+    font-weight: bold;
+    color: $grey-800;
+  }
+
+  .card-body { padding: .8rem 1rem .7rem; }
+
+  &.card-success { @include card ($green); }
+  &.card-info    { @include card ($orange); }
+  &.card-warning { @include card ($cyan); }
+  &.card-error   { @include card ($red); }
+}

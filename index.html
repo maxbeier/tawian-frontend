@@ -5,70 +5,94 @@
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <title>Tawian</title>
-   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="style.css">
    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cousine:400,400i,700,700i">
+
+   <style>
+      .example-grid .inner {
+         background-color: #eee;
+         text-align: center;
+      }
+   </style>
 </head>
 
 <body>
 
    <div class="container">
 
-      <header class="site-header dashed-bottom">
-         <span class="title">Tawian</span>
+      <header class="site-header">
+         <div class="title">Title</div>
+         <nav class="site-nav">
+            <ul>
+               <li><a href="#">Link</a></li>
+               <li><a href="#">Link</a></li>
+               <li><a href="#">Link</a></li>
+            </ul>
+         </nav>
       </header>
 
-      <main class="site-main hr hr-line">
+      <main class="site-main">
 
-         <h1>hack.css <small>dead <a href="#">simple</a> css framework</small></h1>
-
-         <p>
-            Lorem ipsum dolor <a href="#">Link gambys</a> sit amet,
-            <code>consectetur</code> adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-         </p>
-
-         <p>Der Server<sup id="fnref:shell"><a href="#fn:shell" class="footnote">1</a></sup> antwortet mit
-            <code>HTTP/1.1 301 Moved Permanently</code>. <a href="http://de.wikipedia.org/wiki/HTTP-Statuscode#3xx_.E2.80.93_Umleitung">Statuscode 301</a> bedeutet, dass die gesuchte Seite dauerhaft nicht mehr unter dieser URL zu finden ist. Im
-            <code>Location</code>-Header finden Sie die neue URL der Seite.
-         </p>
-
-         <p class="alert alert-info">
-            <strong>Warning</strong> Work in progress
-         </p>
+         <h1>Tawian frontend</h1>
 
          <h2>Components</h2>
+
+         <h3>Links and Typo</h3>
+
+         <p>
+            Lorem ipsum dolor <a href="#">sit amet adipisicing</a> elit, sed do eiusmod <em>italic</em> incididunt ut <strong>bold</strong> et dolore magna aliqua.<sup id="fnref:example"><a href="#fn:example" class="footnote">1</a></sup>
+         </p>
+
+
+         <h3>List</h3>
+
+         <div class="grid">
+            <div class="cell">
+               <ul>
+                  <li>Item
+                     <ul>
+                        <li>Sub Item</li>
+                        <li>Sub Item</li>
+                        <li>Sub Item</li>
+                     </ul>
+                  </li>
+                  <li>Item</li>
+                  <li>Item</li>
+               </ul>
+            </div>
+            <div class="cell">
+               <ol>
+                  <li>One</li>
+                  <li>Two</li>
+                  <li>Three
+                     <ol>
+                        <li>Three One</li>
+                        <li>Three Two</li>
+                     </ol>
+                  </li>
+                  <li>Four</li>
+               </ol>
+            </div>
+         </div>
+
+
+         <h3>Blockquote</h3>
+
+         <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quis cumque similique voluptas facilis fugit inventore odit, quidem et ab, quos, blanditiis iure! Ipsum nostrum corrupti architecto fugit, culpa expedita.</blockquote>
+
+
+         <h3>Code</h3>
+
+         <p>You can use <code>inline code</code> or code blocks.</p>
+
+         <div class="highlight language-shell" data-lang="shell"><pre><code><span class="k">while </span><span class="nb">true</span>; <span class="k">do</span> <span class="o">{</span> <span class="nb">echo</span> -e <span class="s2">"HTTP/1.1 200 OK</span><span class="se">\r\n</span><span class="s2">"</span>; cat index.html; <span class="o">}</span> | nc -l 8080; <span class="k">done</span></code></pre>
+         </div>
+
 
          <h3>HR</h3>
 
          <hr>
 
-         <h3>List</h3>
-         <ul>
-            <li>foo
-               <ul>
-                  <li>sub foo</li>
-                  <li>sub bar</li>
-                  <li>sub baz</li>
-               </ul>
-            </li>
-            <li>bar</li>
-            <li>baz</li>
-         </ul>
-
-         <ol>
-            <li>Eins</li>
-            <li>Zwei</li>
-            <li>Drei
-               <ol>
-                  <li>sub foo</li>
-                  <li>sub bar</li>
-               </ol>
-            </li>
-            <li>Zwei</li>
-         </ol>
-
-
-         <h3>Blockquote</h3>
-         <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates quis cumque similique voluptas facilis fugit inventore odit, quidem et ab, quos, blanditiis iure! Ipsum nostrum corrupti architecto fugit, culpa expedita. <span class="loading"></span></blockquote>
 
          <h3>Form</h3>
 
@@ -76,21 +100,7 @@
 
             <label class="form-group">
                <input type="text" placeholder="type your name..." class="form-control">
-               <span class="form-label">USERNAME</span>
-            </label>
-
-            <label class="form-group">
-               <div class="form-control">
-                  <label>
-                     <input type="checkbox" class="ascii"> Checkbox 1</label>
-                  <label>
-                     <input type="checkbox" class="ascii" disabled> Checkbox 2 disabled</label>
-                  <label>
-                     <input type="checkbox"> Checkbox 3</label>
-                  <label>
-                     <input type="checkbox" disabled> Checkbox 4 disabled</label>
-               </div>
-               <span class="form-label">STATUS</span>
+               <span class="form-label">TEXT</span>
             </label>
 
             <label class="form-group">
@@ -99,52 +109,71 @@
             </label>
 
             <label class="form-group">
+               <input type="number" class="form-control">
+               <span class="form-label">NUMBER</span>
+            </label>
+
+            <label class="form-group">
+               <input type="file" class="form-control">
+               <span class="form-label">FILE</span>
+            </label>
+
+            <label class="form-group">
                <div class="form-control">
-                  <label>
-                     <input type="radio" name="radio" class="ascii"> Radio 1</label>
-                  <label>
-                     <input type="radio" name="radio" class="ascii" disabled> Radio 2</label>
-                  <label>
-                     <input type="radio" name="radio"> Radio 3</label>
-                  <label>
-                     <input type="radio" name="radio" disabled> Radio 4</label>
+                  <label><input type="checkbox"> Checkbox 1</label>
+                  <label><input type="checkbox"> Checkbox 2</label>
+                  <label><input type="checkbox"> Checkbox 3</label>
+                  <label><input type="checkbox" disabled> Checkbox 4 disabled</label>
                </div>
-               <span class="form-label">STATUS</span>
+               <span class="form-label">CHECKBOX</span>
+            </label>
+
+            <label class="form-group">
+               <div class="form-control">
+                  <label><input type="radio" name="radio"> Radio 1</label>
+                  <label><input type="radio" name="radio"> Radio 2</label>
+                  <label><input type="radio" name="radio"> Radio 3</label>
+                  <label><input type="radio" name="radio"> Radio 4</label>
+                  <label><input type="radio" name="radio" disabled> Radio 5 disabled</label>
+               </div>
+               <span class="form-label">RADIO</span>
             </label>
 
             <label class="form-group">
                <select class="form-control">
-                  <option>China</option>
-                  <option>U.S.</option>
-                  <option>U.K.</option>
-                  <option>Japan</option>
+                  <option>Option One</option>
+                  <option>Option Two</option>
+                  <option>Option Three</option>
+                  <option>Option Four</option>
                </select>
-               <span class="form-label">COUNTRY</span>
+               <span class="form-label">SELECT</span>
             </label>
 
             <label class="form-group form-textarea">
                <textarea rows="5" class="form-control">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam placeat ratione nisi assumenda quo saepe quasi iste temporibus asperiores. Soluta cupuam at reprehenderit facere. Asperiores nulla rerum earum pariatur.</textarea>
-               <span class="form-label">MESSAGE</span>
+               <span class="form-label">TEXTAREA</span>
             </label>
 
             <button type="button" class="btn btn-primary btn-block">Submit</button>
          </form>
 
+
          <h4>Stateful Form</h4>
 
          <form class="form">
 
-            <label class="form-group form-success">
+            <label class="form-group form-info">
                <input type="text" placeholder="type your name..." class="form-control">
-               <span class="form-label">USERNAME</span>
+               <span class="form-label">INFO</span>
             </label>
 
             <label class="form-group form-warning">
                <input type="text" class="form-control">
-               <span class="form-label">AGE</span>
+               <span class="form-label">WARNING</span>
             </label>
 
          </form>
+
 
          <h4>Help Block</h4>
 
@@ -152,86 +181,87 @@
 
             <label class="form-group">
                <input type="text" placeholder="type your name..." class="form-control">
-               <span class="form-label">USERNAME</span>
+               <span class="form-label">NORMAL</span>
                <div class="help-block">Please only use alphanumeric characters</div>
             </label>
 
             <label class="form-group form-success">
-               <input type="tel" value="+86 180 800 8000" class="form-control">
-               <span class="form-label">Phone Number</span>
-               <div class="help-block">In this format: +86 xxx xxx xxxxx</div>
+               <input type="text" value="tawian" class="form-control">
+               <span class="form-label">SUCCESS</span>
+               <div class="help-block">Congrats, this name is still available</div>
             </label>
 
             <label class="form-group form-error">
-               <input type="email" class="form-control">
-               <span class="form-label">EMAIL</span>
-               <div class="help-block">This does not look like a valid email address. Use the following format: account@provider.tld</div>
+               <input type="email" value="null" class="form-control">
+               <span class="form-label">ERROR</span>
+               <div class="help-block">This does not look like a valid email address</div>
             </label>
 
          </form>
+
 
          <h4>Disabled</h4>
 
          <form class="form">
 
             <label class="form-group">
-               <input type="tel" value="+86 180 800 8000" class="form-control" disabled>
-               <span class="form-label">Phone Number</span>
+               <input type="text" value="Lorem ipsum dolor sit amet" class="form-control" disabled>
+               <span class="form-label">TEXT</span>
             </label>
 
             <label class="form-group">
                <select class="form-control" disabled>
-                  <option>China</option>
-                  <option>U.S.</option>
-                  <option>U.K.</option>
-                  <option>Japan</option>
+                  <option>Optione One</option>
                </select>
-               <span class="form-label">COUNTRY</span>
+               <span class="form-label">SELECT</span>
             </label>
 
             <label class="form-group form-textarea">
                <textarea rows="3" class="form-control" disabled>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam placeat ratione nisi assumenda quo saepe quasi iste temporibus asperiores. Soluta cupuam at reprehenderit facere. Asperiores nulla rerum earum pariatur.</textarea>
-               <span class="form-label">MESSAGE</span>
+               <span class="form-label">TEXTAREA</span>
             </label>
 
          </form>
+
 
          <h4>Readonly</h4>
 
          <form class="form">
 
             <label class="form-group">
-               <input type="tel" value="+86 180 800 8000" class="form-control" readonly>
-               <span class="form-label">Phone Number</span>
+               <input type="text" value="Lorem ipsum dolor sit amet" class="form-control" readonly>
+               <span class="form-label">TEXT</span>
             </label>
 
             <label class="form-group form-textarea">
                <textarea rows="3" class="form-control" readonly>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam placeat ratione nisi assumenda quo saepe quasi iste temporibus asperiores. Soluta cupuam at reprehenderit facere. Asperiores nulla rerum earum pariatur.</textarea>
-               <span class="form-label">MESSAGE</span>
+               <span class="form-label">TEXTAREA</span>
             </label>
 
          </form>
+
 
          <h4>Required</h4>
 
          <form class="form">
 
             <label class="form-group">
-               <input type="tel" value="+86 180 800 8000" class="form-control" required>
-               <span class="form-label">Phone Number</span>
+               <input type="text" placeholder="type your name..." class="form-control" required>
+               <span class="form-label">TEXT</span>
             </label>
 
             <label class="form-group form-textarea">
                <textarea rows="3" class="form-control" required>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam placeat ratione nisi assumenda quo saepe quasi iste temporibus asperiores. Soluta cupuam at reprehenderit facere. Asperiores nulla rerum earum pariatur.</textarea>
-               <span class="form-label">MESSAGE</span>
+               <span class="form-label">TEXTAREA</span>
             </label>
 
          </form>
 
+
          <h3>Table</h3>
 
          <table>
-            <caption>Beschreibung einer Tabelle</caption>
+            <caption>Caption of the Table</caption>
             <thead>
                <tr>
                   <th>editor</th>
@@ -262,23 +292,30 @@
             </tbody>
          </table>
 
+
          <h3>List Group</h3>
 
-         <ul class="list-group">
-            <li>Cras justo odio</li>
-            <li class="disabled">disabled</li>
-            <li>Morbi leo risus</li>
-            <li class="active">active</li>
-            <li>Porta ac consectetur ac</li>
-         </ul>
-
-         <div class="list-group">
-            <a href="#">Cras justo odio</a>
-            <a class="active" href="#">active link</a>
-            <a href="#">Morbi leo risus</a>
-            <a href="#">Porta ac consectetur ac</a>
-            <a href="#" title="a">Vestibulum at eros</a>
+         <div class="grid">
+            <div class="cell">
+               <ul class="list-group">
+                  <li>Cras justo odio</li>
+                  <li class="disabled">DISABLED</li>
+                  <li>Morbi leo risus</li>
+                  <li class="active">ACTIVE</li>
+                  <li>Porta ac consectetur</li>
+               </ul>
+            </div>
+            <div class="cell">
+               <div class="list-group">
+                  <a href="#">Cras justo odio</a>
+                  <a class="active" href="#">ACTIVE LINK</a>
+                  <a href="#">Morbi leo risus</a>
+                  <a href="#">Porta ac consectetur</a>
+                  <a href="#" title="a">Vestibulum at eros</a>
+               </div>
+            </div>
          </div>
+
 
          <h3>Progress bar</h3>
 
@@ -312,6 +349,7 @@
             </div>
          </p>
 
+
          <h3>Buttons</h3>
 
          <p>
@@ -337,42 +375,48 @@
             <button class="btn btn-primary btn-block btn-ghost">Block Level Button</button>
          </p>
 
-         <h3>Button group</h3>
+
+         <h3>Button Groups</h3>
 
          <div class="grid">
-            <div class="cell">
-               <p>breaks nicely if too long</p>
-               <p>
-                  <div class="btn-group full-width">
-                     <button class="btn btn-default btn-ghost">Left</button>
-                     <button class="btn btn-default btn-ghost">Middle</button>
-                     <button class="btn btn-default btn-ghost">Right</button>
-                  </div>
-               </p>
-               <p>
-                  <div class="btn-group full-width">
-                     <button class="btn btn-default">Too</button>
-                     <button class="btn btn-default">many</button>
-                     <button class="btn btn-default">Elements</button>
-                     <button class="btn btn-default">to fit in</button>
-                     <button class="btn btn-default">one line</button>
-                  </div>
-               </p>
+            <div class="cell -4of12">
+               <div class="btn-group full-width">
+                  <button class="btn btn-default btn-ghost">Left</button>
+                  <button class="btn btn-default btn-ghost">Middle</button>
+                  <button class="btn btn-default btn-ghost">Right</button>
+               </div>
             </div>
-            <div class="cell">
-               <p>is a friendly neighbour</p>
-               <p>
-                  <div class="btn-group">
-                     <button class="btn btn-default">1</button>
-                     <button class="btn btn-default">2</button>
-                     <button class="btn btn-default">3</button>
-                  </div>
-                  <div class="btn-group">
-                     <button class="btn btn-default btn-primary">1</button>
-                     <button class="btn btn-default btn-info">2</button>
-                     <button class="btn btn-default btn-warning">3</button>
-                  </div>
-               </p>
+
+            <div class="cell -4of12">
+               <div class="btn-group">
+                  <button class="btn btn-success">✔</button>
+                  <button class="btn btn-error">✗</button>
+               </div>
+               <div class="btn-group">
+                  <button class="btn btn-default btn-primary">1</button>
+                  <button class="btn btn-default btn-info">2</button>
+                  <button class="btn btn-default btn-warning">3</button>
+               </div>
+            </div>
+
+            <div class="cell -4of12">
+               <div class="btn-group full-width">
+                  <button class="btn btn-default">Full</button>
+                  <button class="btn btn-default">Width</button>
+               </div>
+            </div>
+
+            <div class="cell -4of12">
+               <div class="btn-group full-width">
+                  <button class="btn btn-default">Way</button>
+                  <button class="btn btn-default">too many</button>
+                  <button class="btn btn-default">Elements</button>
+                  <button class="btn btn-default">to fit in</button>
+                  <button class="btn btn-default">one line</button>
+               </div>
+            </div>
+
+            <div class="cell -4of12">
                <div>
                   <button class="btn btn-primary btn-ghost">←</button>
                   <div class="btn-group">
@@ -383,24 +427,21 @@
                   <button class="btn btn-primary btn-ghost">→</button>
                </div>
             </div>
-            <div class="cell">
-               <p>stretches with <code>.full-width</code></p>
-               <p>
-                  <div class="btn-group full-width">
-                     <button class="btn btn-success">Yes</button>
-                     <button class="btn btn-error">No</button>
-                  </div>
-               </p>
-            </div>
          </div>
 
-         <h3>Card</h3>
+
+         <h3>Loading Indicator<span class="loading"></span></h3>
+
+         <button class="btn btn-info btn-ghost">Loading<span class="loading"></span></button>
+
+
+         <h3>Cards</h3>
 
          <p>
             <div class="card">
-               <div class="card-header">title</div>
+               <div class="card-header">TITLE</div>
                <div class="card-body">
-                  <div class="inner">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, quas ex vero enim in doloribus officiis ullam vel nam esse sapiente velit incidunt. Eaque quod et, aut maiores excepturi sint.</div>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, quas ex vero enim in doloribus officiis ullam vel nam esse sapiente velit incidunt. Eaque quod et, aut maiores excepturi sint.
                </div>
             </div>
          </p>
@@ -410,33 +451,33 @@
                <div class="card card-success">
                   <header class="card-header">in grid</header>
                   <div class="card-body">
-                     <div class="inner">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, quas ex vero enim in doloribus officiis ullam vel nam esse sapiente velit incidunt. Eaque quod et, aut maiores excepturi sint.</div>
+                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, quas ex vero enim in doloribus officiis ullam vel nam esse sapiente velit incidunt. Eaque quod et, aut maiores excepturi sint.
                   </div>
                </div>
             </div>
             <div class="cell">
                <div class="card card-warning">
                   <header class="card-header">with list group</header>
-                  <div class="list-group card-body">
+                  <div class="list-group">
                      <span>Cras justo odio</span>
                      <span>Dapibus ac facilisis in</span>
                      <span>Morbi leo risus</span>
                      <span>Vestibulum at eros</span>
-                     <span>Porta ac consectetur ac</span>
+                     <span>Porta ac consectetur</span>
                   </div>
                </div>
             </div>
             <div class="cell">
                <div class="card">
                   <header class="card-header">with image</header>
-                  <div class="card-body">
-                     <img class="full-width" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAABCAYAAAAb4BS0AAAAEElEQVR42mNUnPb5PwMUAAAajQKrlc3KqAAAAABJRU5ErkJggg==" alt="Image">
-                  </div>
+                  <img class="full-width" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAABCAYAAAAb4BS0AAAAEElEQVR42mNUnPb5PwMUAAAajQKrlc3KqAAAAABJRU5ErkJggg==" alt="Image" height="100">
                </div>
             </div>
          </div>
 
+
          <h3>Alerts</h3>
+
          <p>
             <p class="alert alert-success">Success message</p>
             <p class="alert alert-info">Info message</p>
@@ -444,9 +485,10 @@
             <p class="alert alert-error">Error message</p>
          </p>
 
+
          <h3>Images and Figures</h3>
 
-         <p>Nothing fancy with <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAABCAYAAAAb4BS0AAAAEElEQVR42mNUnPb5PwMUAAAajQKrlc3KqAAAAABJRU5ErkJggg==" width="24" height="12" alt="Image"> here.</p>
+         <p>You can use <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAABCAYAAAAb4BS0AAAAEElEQVR42mNUnPb5PwMUAAAajQKrlc3KqAAAAABJRU5ErkJggg==" width="24" height="12" alt="Image"> inline.</p>
 
          <h4><code>.full-width</code></h4>
 
@@ -459,74 +501,66 @@
            <figcaption>Bildbeschreibung</figcaption>
          </figure>
 
-         <h3>Media</h3>
-
-         <p>This is useful if you intend to display a list of items, like the Twitter timeline.</p>
-         <p>
-            <div class="media">
-               <div class="media-left">
-                  <div class="avatarholder">e</div>
-               </div>
-               <div class="media-body">
-                  <header class="media-heading">EGOIST @egoist</header>
-                  <div class="media-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga vel, voluptates, doloremque nesciunt illum est corrupti nostrum expedita adipisci dicta vitae? Eveniet maxime quibusdam modi molestias alias et incidunt est.</div>
-               </div>
-            </div>
-         </p>
-         <div class="media">
-            <div class="media-body">
-               <header class="media-heading">EGOIST @egoist</header>
-               <div class="media-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga vel, voluptates, doloremque nesciunt illum est corrupti nostrum expedita adipisci dicta vitae? Eveniet maxime quibusdam modi molestias alias et incidunt est.</div>
-            </div>
-            <div class="media-right">
-               <div class="avatarholder rounded">e</div>
-            </div>
-         </div>
-
-         <h3>Loading</h3>
-
-         <p>
-            <button class="btn btn-info btn-ghost">
-               Loading<span class="loading"></span>
-            </button>
-         </p>
 
          <h2>Basic</h2>
 
-         <p>Use <code>.container</code> to centralize the main content.</p>
-         <p>Use <strong>flexbox</strong> to make layouts.</p>
 
-         <div class="grid">
-            <div class="cell -4of12">4</div>
-            <div class="cell -4of12">4</div>
-            <div class="cell -4of12">4</div>
-         </div>
-         <div class="grid">
-            <div class="cell -4of12">4</div>
-            <div class="cell -8of12">8</div>
-         </div>
-         <div class="grid">
-            <div class="cell">1</div>
-            <div class="cell">1</div>
-            <div class="cell">1</div>
-            <div class="cell">1</div>
-            <div class="cell">1</div>
-            <div class="cell">1</div>
-            <div class="cell">1</div>
-            <div class="cell">1</div>
-            <div class="cell">1</div>
-            <div class="cell">1</div>
-            <div class="cell">1</div>
-            <div class="cell">1</div>
+         <p>Use <code>.container</code> to centralize the main content.</p>
+
+         <p>Use <code>.site-header</code>, <code>.site-main</code> and <code>.site-footer</code> for the main sectioning elements.</p>
+
+
+         <h3>Grid</h3>
+
+         <div class="example-grid">
+
+            <div class="bottom-gap">
+               <div class="grid">
+                  <div class="cell"><div class="inner">space</div></div>
+                  <div class="cell"><div class="inner">can be</div></div>
+                  <div class="cell"><div class="inner">flexibly</div></div>
+                  <div class="cell"><div class="inner">distributed</div></div>
+               </div>
+            </div>
+
+            <div class="bottom-gap">
+               <div class="grid">
+                  <div class="cell -4of12"><div class="inner">4</div></div>
+                  <div class="cell -4of12"><div class="inner">4</div></div>
+                  <div class="cell -4of12"><div class="inner">4</div></div>
+               </div>
+            </div>
+
+            <div class="bottom-gap">
+               <div class="grid">
+                  <div class="cell -4of12"><div class="inner">4</div></div>
+                  <div class="cell -8of12"><div class="inner">8</div></div>
+               </div>
+            </div>
+
+            <div class="grid">
+               <div class="cell"><div class="inner">1</div></div>
+               <div class="cell"><div class="inner">1</div></div>
+               <div class="cell"><div class="inner">1</div></div>
+               <div class="cell"><div class="inner">1</div></div>
+               <div class="cell"><div class="inner">1</div></div>
+               <div class="cell"><div class="inner">1</div></div>
+               <div class="cell"><div class="inner">1</div></div>
+               <div class="cell"><div class="inner">1</div></div>
+               <div class="cell"><div class="inner">1</div></div>
+               <div class="cell"><div class="inner">1</div></div>
+               <div class="cell"><div class="inner">1</div></div>
+               <div class="cell"><div class="inner">1</div></div>
+            </div>
+
          </div>
 
          <div class="grid">
             <div class="cell">
-               <h3><code>.grid</code> modifiers</h3>
+               <h4><code>.grid</code> modifiers</h4>
                <ul>
-                  <li>To change spacing: <code>-narrow</code>, <code>-wide</code></li>
-                  <li>To align items with
-                     <strong>align-items</strong>
+                  <li>To change padding use <code>-narrow</code> or <code>-wide</code></li>
+                  <li>To align items with <strong>align-items</strong> use
                      <ul>
                         <li><code>-top</code>: To top</li>
                         <li><code>-middle</code>: To middle</li>
@@ -535,8 +569,7 @@
                         <li><code>-baseline</code>: To baseline</li>
                      </ul>
                   </li>
-                  <li>To layout contents with
-                     <strong>justify-content</strong>
+                  <li>To layout contents with <strong>justify-content</strong> use
                      <ul>
                         <li><code>-left</code>: To left</li>
                         <li><code>-center</code>: To center</li>
@@ -548,7 +581,7 @@
                </ul>
             </div>
             <div class="cell">
-               <h3><code>.cell</code> modifiers</h3>
+               <h4><code>.cell</code> modifiers</h4>
                <ul>
                   <li><code>-1of12</code>: Set item width to 8.3% of parent</li>
                   <li><code>-2of12</code>: Set item width to 16.7% of parent</li>
@@ -566,79 +599,18 @@
             </div>
          </div>
 
-
-<div class="footnotes dashed-top">
-  <ol>
-    <li id="fn:shell">
-      <p>Windowsnutzer können <a href="http://babun.github.io/">babun</a> verwenden und finden alle weiteren Tools im Package Manager. <a href="#fnref:shell" class="reversefootnote">&#8617;</a></p>
-    </li>
-    <li id="fn:netcat">
-      <p>Unabhängig von dieser Aufgabe können Sie netcat auch als sehr einfachen Webserver benutzen:</p>
-
-<div class="highlight language-shell" data-lang="shell"><pre><code><span class="k">while </span><span class="nb">true</span>; <span class="k">do</span> <span class="o">{</span> <span class="nb">echo</span> -e <span class="s2">"HTTP/1.1 200 OK</span><span class="se">\r\n</span><span class="s2">"</span>; cat index.html; <span class="o">}</span> | nc -l 8080; <span class="k">done</span>
-</code></pre>
-</div>
-      <p>Mit <code>-e</code> interpretiert <code>echo</code> Zeilenumbrüche und <code>-l</code> versetzt netcat in den “Listen”-Mode; die Zahl dahinter gibt den Port an.</p>
-
-      <p>Wenn Sie <a href="http://localhost:8080"><code>localhost:8080</code></a> mit einem beliebigen Browser ansteuern, sehen Sie in der Shell, wie dieser HTTP spricht.</p>
-
-      <p>Genauso leicht lassen sich auch Dateien zwischen zwei Rechnern austauschen:</p>
-
-<div class="highlight language-shell" data-lang="shell"><pre><code><span class="c"># Sender</span>
-cat klausur.pdf | nc ip.des.empfängers 1234
-<span class="c"># Empfänger</span>
-nc -l 1234 &gt; klausur.pdf
-</code></pre>
-</div>      <p><a href="#fnref:netcat" class="reversefootnote">&#8617;</a></p>
-    </li>
-    <li id="fn:wikipedia">
-
-      <p>Beispiel Wikipedia:</p>
-
-<div class="highlight language-shell" data-lang="shell"><pre><code>dig +short en.wikipedia.org
-dig +short de.wikipedia.org
-</code></pre>
-</div>
-      <p>Beide haben die IP <code>91.198.174.192</code>.</p>
-
-<div class="highlight language-shell" data-lang="shell"><pre><code>nc 91.198.174.192 80
-
-GET / HTTP/1.1
-Host: en.wikipedia.org
-<span class="c"># HTTP/1.1 301 Moved Permanently</span>
-<span class="c"># Location: http://en.wikipedia.org/wiki/Main_Page</span>
-
-GET / HTTP/1.1
-Host: de.wikipedia.org
-<span class="c"># HTTP/1.1 301 Moved Permanently</span>
-<span class="c"># Location: http://de.wikipedia.org/wiki/Wikipedia:Hauptseite</span>
-</code></pre>
-</div>      <p><a href="#fnref:wikipedia" class="reversefootnote">&#8617;</a></p>
-    </li>
-    <li id="fn:wget">
-      <p>Wget kann noch ganz andere tolle Sachen – Sie mögen beispielsweise diese Seite und hätten sie gern offline verfügbar? Lade Sie sie komplett herunter per:</p>
-
-<div class="highlight language-shell" data-lang="shell"><pre><code>wget <span class="se">\</span>
-     --recursive <span class="se">\</span>
-     --no-clobber <span class="se">\</span>
-     --no-parent <span class="se">\</span>
-     --convert-links <span class="se">\</span>
-     --html-extension <span class="se">\</span>
-     --page-requisites <span class="se">\</span>
-     --restrict-file-names<span class="o">=</span>windows <span class="se">\</span>
-     --domains beier.f4.htw-berlin.de <span class="se">\</span>
-       https://beier.f4.htw-berlin.de
-</code></pre>
-</div>
-      <p>Quelle: <a href="http://www.linuxjournal.com/content/downloading-entire-web-site-wget">Linux Journal</a> <a href="#fnref:wget" class="reversefootnote">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
+         <div class="footnotes dashed-top">
+            <ol>
+               <li id="fn:example">
+                  <p>Example footnote text. <a href="#fnref:example" class="reversefootnote">&#8617;</a></p>
+               </li>
+            </ol>
+         </div>
 
       </main>
 
-      <footer class="site-footer dashed-top">
-         Tawian
+      <footer class="site-footer">
+         Footer text – <a href="#" title="Link">Link</a> <a href="#" title="Link">Link</a>
       </footer>
 
    </div>

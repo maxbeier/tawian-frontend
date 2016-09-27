@@ -1,28 +1,17 @@
-/* Elements */
+// Basic Styles -----------------------------------------------
 
 * {
   box-sizing: border-box;
   text-rendering: geometricPrecision;
 }
 
-::selection {
-  background: $blue-100;
-}
+::selection { background: $blue-100; }
 
-html,
-textarea,
-input,
-select {
+html {
+  color: $grey-900;
   font-size: 16px;
   line-height: 1.6;
-  color: $grey-900;
-  font-family: 'Cousine', Menlo, Lucida Console, Courier New, monospace;
-}
-
-body {
-  font-size: 1rem;
-  margin: 0;
-  word-wrap: break-word;
+  font-family: "Cousine", Menlo, Lucida Console, Courier New, monospace;
 }
 
 h1,
@@ -48,6 +37,7 @@ pre,
 form,
 table,
 blockquote {
+  margin-top: 0;
   margin-bottom: 1rem;
 }
 
@@ -56,66 +46,53 @@ ol ol,
 ul ol,
 ol ul { margin-bottom: 0; }
 
-fieldset {
-  border: none;
-  padding: 0;
-  margin: 0;
-}
 
-// Page
-
-header.site-header {
-  padding: 1rem 0 .85rem;
-  color: $blue-grey-600;
-
-  .title {
-    font-size: 2rem;
-    line-height: 1.1;
-  }
-
-  hr { margin-top: .5rem; }
-}
-
-main.site-main {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
-footer.site-footer {
-  padding-bottom: 2rem;
-  color: $grey-400;
-  text-align: center;
-}
-
-blockquote {
-  border-left: .5rem solid $grey-300;
-  padding-left: 1rem;
-}
-
-img.full-width { display: block; }
-
-figure {
-  margin: 0;
-
-  img { width: 100%; }
-}
-
-figcaption {
-  text-align: center;
-  color: $grey;
-}
-
-/* Classes */
+// Page -------------------------------------------------------
 
 .container {
-  max-width: 64rem;
+  max-width: $container;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
-.container-fluid {
-  margin: 0 auto;
-  padding: 0 1rem;
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0 .75rem;
+  border-bottom: $form-border-width dashed $grey-400;
+  color: $blue-grey-600;
+
+  .title {
+    font-size: 2rem;
+    line-height: 1.1;
+  }
+}
+
+.site-nav {
+  display: inline-flex;
+
+  ul {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0;
+    margin-left: -1rem;
+  }
+
+  li:before { display: none; }
+}
+
+.site-main {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.site-footer {
+  padding: 1rem 0 .75rem;
+  border-top: $form-border-width dashed $grey-400;
+  color: $grey-400;
+  text-align: center;
 }
