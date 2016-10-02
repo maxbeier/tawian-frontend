@@ -12,19 +12,17 @@
 // Code ------------------------------------------------------
 
 code {
-  background-color: $grey-200;
+  background-color: $grey-100;
   padding: .25em .5em;
   border-radius: 2px;
   color: $black;
 }
 
+samp,
 pre {
-  display: block;
-  margin-top: 0;
   padding: 1rem 1.5rem .9rem;
   border: $border-width solid $grey-300;
   border-radius: $button-radius;
-  white-space: pre;
   white-space: pre-wrap;
   word-wrap: break-word;
   word-break: break-all;
@@ -37,6 +35,11 @@ pre code {
   background-color: transparent;
 }
 
+samp {
+  display: inline-block;
+  margin-top: -2px;
+  padding: 0 .5em;
+  background-color: $grey-50;
 }
 
 
@@ -56,7 +59,11 @@ a {
 
 // Images -----------------------------------------------------
 
-img.full-width { display: block; }
+img {
+  max-width: 100%;
+
+  &.full-width { display: block; }
+}
 
 figure {
   margin: 0;
@@ -83,4 +90,38 @@ cite {
   color: $grey;
   &:before { content: "– "; }
 }
+
+
+// Inline Text Elements ---------------------------------------
+
+mark {
+  background-color: $yellow-300;
+  box-shadow: 0 -1px 0 3px $yellow-300;
+}
+
+abbr[title] {
+  @extend .dashed-bottom;
+  text-decoration: none;
+}
+
+kbd {
+  display: inline-block;
+  padding: .25em .4em;
+  vertical-align: middle;
+  color: $grey-800;
+  border: solid 1px $grey-200;
+  border-bottom-color: $grey-300;
+  border-radius: 3px;
+  background-color: $grey-50;
+  box-shadow: inset 0 -1px 0 $grey-300;
+  font-size: .9em;
+  line-height: 1;
+}
+
+
+// Footnotes --------------------------------------------------
+
+.footnotes {
+  padding-top: 2rem;
+  margin-top: 2rem;
 }

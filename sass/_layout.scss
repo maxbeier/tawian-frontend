@@ -24,6 +24,12 @@ h6 {
   margin-top: 2rem;
   margin-bottom: 2rem;
 
+  .grid & {
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+    &:before { display: none; }
+  }
+
   & > small { color: $grey; }
 }
 
@@ -40,6 +46,8 @@ blockquote {
   margin-top: 0;
   margin-bottom: 1rem;
 }
+
+p { margin-top: -.25em; }
 
 ul ul,
 ol ol,
@@ -59,14 +67,26 @@ ol ul { margin-bottom: 0; }
 
 .site-header {
   display: flex;
-  justify-content: space-between;
-  padding: 1rem 0 .75rem;
-  border-bottom: $form-border-width dashed $grey-400;
-  color: $blue-grey-600;
+  flex-wrap: wrap;
+  padding: 1.25rem 0 1rem;
+}
 
-  .title {
-    font-size: 2rem;
-    line-height: 1.1;
+.site-title {
+  font-size: 2rem;
+  line-height: 1;
+  color: $blue-grey-600;
+}
+
+.site-search {
+  margin: 0;
+
+  input {
+    width: 16rem;
+    padding: .4rem 0 0;
+    border: 0;
+    border-bottom: $form-border-width solid $grey-100;
+    border-radius: 0; // iOS
+    appearance: none; // iOS
   }
 }
 
@@ -143,8 +163,10 @@ ol ul { margin-bottom: 0; }
 }
 
 .site-footer {
-  padding: 1rem 0 .75rem;
-  border-top: $form-border-width dashed $grey-400;
+  margin-top: 1rem;
+  padding: 2rem 0;
   color: $grey-400;
   text-align: center;
+
+  a { color: $blue-300; }
 }

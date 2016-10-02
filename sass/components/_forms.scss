@@ -44,6 +44,7 @@
   padding: .25rem 1rem 0;
   border: none;
   border-bottom: $form-border-width solid $grey-300;
+  border-radius: 0; // iOS
   outline: none;
   background-color: transparent;
 
@@ -128,6 +129,7 @@ select.form-control {
   cursor: not-allowed;
   color: $grey-400;
   -webkit-text-fill-color: $grey-400; // Safari
+  opacity: 1; // iOS
 }
 
 .form-control[readonly],

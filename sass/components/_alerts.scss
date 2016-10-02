@@ -11,6 +11,6 @@
 }
 
 .alert-success { @include alert ($green); }
-.alert-error   { @include alert ($red); }
 .alert-info    { @include alert ($cyan); }
 .alert-warning { @include alert ($orange); }
+.alert-error   { @include alert ($red); }

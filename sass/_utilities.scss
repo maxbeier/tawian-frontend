@@ -1,26 +1,30 @@
 // Space and Size ---------------------------------------------
 
-.narrow { padding: 0 !important; }
-.inner { padding: .8rem 1rem .7rem !important; }
-.inner2x { padding: 1.6rem 2rem 1.4rem !important; }
+.narrow { padding: 0                              !important; }
+.inner { padding: .8rem 1rem .7rem                !important; }
+.inner-wide { padding: 1.6rem 2rem 1.4rem         !important; }
 
-.top-gap { margin-top: 1rem; }
-.bottom-gap { margin-bottom: 1rem; }
+.m-t-0 { margin-top: 0                            !important; }
+.m-t-1 { margin-top: 1rem                         !important; }
+.m-t-2 { margin-top: 2rem                         !important; }
+.m-t-3 { margin-top: 3rem                         !important; }
 
-.top-gap2x { margin-top: 2rem; }
-.bottom-gap2x { margin-bottom: 2rem; }
+.m-b-0 { margin-bottom: 0                         !important; }
+.m-b-1 { margin-bottom: 1rem                      !important; }
+.m-b-2 { margin-bottom: 2rem                      !important; }
+.m-b-3 { margin-bottom: 3rem                      !important; }
 
-.pull-left { float: left; }
-.pull-right { float: right; }
+.pull-left { float: left                          !important; }
+.pull-right { float: right                        !important; }
 
-.full-width { width: 100%; }
+.full-width { width: 100%                         !important; }
 
 
 // Hiding -----------------------------------------------------
 
-.invisible { visibility: hidden !important; }
+.invisible { visibility: hidden                   !important; }
 
-.hidden { display: none !important; }
+.hidden { display: none                           !important; }
 
 .hide-text {
   font: 0/0 a;
@@ -31,31 +35,36 @@
 }
 
 @media #{$large} {
-  .hidden-if-large { display: none !important; }
+  .hidden-if-large { display: none                !important; }
 }
 
 @media #{$medium} {
-  .hidden-if-medium { display: none !important; }
+  .hidden-if-medium { display: none               !important; }
 }
 
 @media #{$small} {
-  .hidden-if-small { display: none !important; }
+  .hidden-if-small { display: none                !important; }
 }
 
 @media print {
-  .hidden-if-print { display: none !important; }
+  .hidden-if-print { display: none                !important; }
 }
 
 
-// Dashed Border ----------------------------------------------
+// Text -------------------------------------------------------
 
-@mixin dashed ($side) {
-  padding-#{$side}: 2rem;
-  margin-#{$side}: 2rem;
-  border-#{$side}: $form-border-width dashed $grey-400;
+.lead {
+  margin-bottom: 1.25em;
+  font-size: 1.25em;
 }
 
-.dashed-top    { @include dashed ('top'); }
-.dashed-bottom { @include dashed ('bottom'); }
-.dashed-left   { @include dashed ('left'); }
-.dashed-right  { @include dashed ('right'); }
+.text-left     { text-align: left; }
+.text-center   { text-align: center; }
+.text-right    { text-align: right; }
+
+.text-muted   { color: $grey; }
+.text-primary { color: $blue; }
+.text-success { color: $green; }
+.text-info    { color: $cyan; }
+.text-warning { color: $orange; }
+.text-error   { color: $red; }

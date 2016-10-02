@@ -80,6 +80,9 @@ ol > li:before {
   counter-increment: ol;
 }
 
+
+// Horizontal Rules -------------------------------------------
+
 hr {
   height: 1rem;
   margin: 1.5rem 0;
@@ -98,42 +101,38 @@ hr {
   }
 }
 
-/*
-
-pre code:before,
-pre code:after {
-  content: '';
-}
-
-code {
-  font-weight: 700;
-
-  &:before,
-  &:after {
-    content: "`";
-    display: inline;
-  }
-}
-
-blockquote {
-  position: relative;
-  padding-left: 2ch;
-  overflow: hidden;
-}
-
-blockquote:after {
-  content: ">\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>";
-  white-space: pre;
+%dashed {
+  content: "– – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – – –";
   position: absolute;
-  top: 0;
   left: 0;
-}
-
-em:before,
-em:after {
-  content: "*";
-  display: inline;
+  overflow: hidden;
+  width: 100%;
+  height: 1rem;
+  line-height: 1;
+  word-wrap: break-word;
+  text-align: justify;
+  letter-spacing: -.25rem;
+  font-size: 1rem;
   color: $grey-400;
 }
 
-*/
+.dashed-top {
+  position: relative;
+  &:before {
+    @extend %dashed;
+    top: -.5rem;
+  }
+}
+
+.dashed-bottom {
+  position: relative;
+  &:after {
+    @extend %dashed;
+    bottom: -.5rem;
+  }
+}
+
+hr.dashed {
+  @extend .dashed-top;
+  margin: 2rem 0 1rem;
+}

@@ -26,13 +26,16 @@
 
    <div class="container">
 
-      <header class="site-header">
-         <div class="title">Title</div>
+      <header class="site-header dashed-bottom">
+         <a class="site-title" href="#">Title</a>
          <nav class="responsive-nav">
             <label for="navigation-toggle">≡</label>
          </nav>
          <input type="checkbox" id="navigation-toggle">
          <nav class="site-nav">
+            <form class="site-search" action="." method="GET">
+               <input type="search" name="search" placeholder="search">
+            </form>
             <ul>
                <li><a href="#">Link</a></li>
                <li><a href="#">Link</a></li>
@@ -49,8 +52,10 @@
 
          <h3>Links and Typo</h3>
 
+         <p class="lead">Lead ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
          <p>
-            Lorem ipsum dolor <a href="#">sit amet adipisicing</a> elit, sed do eiusmod <em>italic</em> incididunt ut <strong>bold</strong> et dolore magna aliqua.<sup id="fnref:example"><a href="#fn:example" class="footnote">1</a></sup>
+            Lorem ipsum dolor <a href="#">sit amet adipisicing</a> elit, sed do eiusmod <em>italic</em> incididunt ut <strong>bold</strong> et dolore magna aliqua. Ut enim ad <mark>highlight</mark> minim veniam, <del>deletion</del> quis nostrud exercitation <ins>insertation</ins> ullamco laboris <u>underlined</u> nisi ut aliquip ex <small>small</small> ea commodo consequat <abbr title="Abbreviation">abbr</abbr>. Duis aute irure dolor in reprehenderit <kbd>⌘</kbd> + <kbd>Space</kbd> in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<sup id="fnref:example"><a href="#fn:example" class="footnote">1</a></sup>
          </p>
 
 
@@ -95,13 +100,14 @@
 
          <h3>Code</h3>
 
-         <p>You can use <code>inline code</code> or code blocks.</p>
+         <p>You can use <code>inline code</code>, <samp>inline sample output</samp> or code blocks.</p>
 
          <div class="highlight language-shell" data-lang="shell"><pre><code><span class="k">while </span><span class="nb">true</span>; <span class="k">do</span> <span class="o">{</span> <span class="nb">echo</span> -e <span class="s2">"HTTP/1.1 200 OK</span><span class="se">\r\n</span><span class="s2">"</span>; cat index.html; <span class="o">}</span> | nc -l 8080; <span class="k">done</span></code></pre>
          </div>
 
+         <samp>$ time sleep 3<br>        3.00 real         0.00 user         0.00 sys<br>$ exit</samp>
 
-         <h3>HR</h3>
+         <h3>Horizontal Rule</h3>
 
          <hr>
 
@@ -405,12 +411,12 @@
                </ul>
             </div>
             <div class="cell">
-               <div class="list-group">
-                  <a href="#">Cras justo odio</a>
-                  <a class="active" href="#">ACTIVE LINK</a>
+               <div class="list-group list-striped">
+                  <a href="#">Striped</a>
                   <a href="#">Morbi leo risus</a>
                   <a href="#">Porta ac consectetur</a>
-                  <a href="#" title="a">Vestibulum at eros</a>
+                  <a href="#">Vestibulum at eros</a>
+                  <a class="active" href="#">ACTIVE LINK</a>
                </div>
             </div>
          </div>
@@ -480,7 +486,7 @@
          <h3>Button Groups</h3>
 
          <div class="grid">
-            <div class="cell -4of12">
+            <div class="cell cell-4">
                <div class="btn-group">
                   <button class="btn btn-default btn-ghost">Left</button>
                   <button class="btn btn-default btn-ghost">Middle</button>
@@ -488,7 +494,7 @@
                </div>
             </div>
 
-            <div class="cell -4of12">
+            <div class="cell cell-4">
                <div class="btn-group">
                   <button class="btn btn-success">✔</button>
                   <button class="btn btn-error">✗</button>
@@ -500,14 +506,14 @@
                </div>
             </div>
 
-            <div class="cell -4of12">
+            <div class="cell cell-4">
                <div class="btn-group full-width">
                   <button class="btn btn-default">Full</button>
                   <button class="btn btn-default">Width</button>
                </div>
             </div>
 
-            <div class="cell -4of12">
+            <div class="cell cell-4">
                <div class="btn-group full-width">
                   <button class="btn btn-default">Too</button>
                   <button class="btn btn-default">many</button>
@@ -517,15 +523,22 @@
                </div>
             </div>
 
-            <div class="cell -4of12">
-               <div>
-                  <button class="btn btn-primary btn-ghost">←</button>
-                  <div class="btn-group">
-                     <button class="btn btn-primary btn-ghost">1</button>
-                     <button class="btn btn-primary btn-ghost">2</button>
-                     <button class="btn btn-primary btn-ghost">3</button>
-                  </div>
-                  <button class="btn btn-primary btn-ghost">→</button>
+            <div class="cell cell-4">
+               <button class="btn btn-primary btn-ghost">←</button>
+               <div class="btn-group">
+                  <button class="btn btn-primary btn-ghost">1</button>
+                  <button class="btn btn-primary btn-ghost">2</button>
+                  <button class="btn btn-primary btn-ghost">3</button>
+               </div>
+               <button class="btn btn-primary btn-ghost">→</button>
+            </div>
+
+            <div class="cell cell-4">
+               <div class="btn-group">
+                  <span class="btn-addon">Prefix</span>
+                  <button class="btn btn-default btn-ghost">1</button>
+                  <button class="btn btn-default btn-ghost">2</button>
+                  <span class="btn-addon">Postfix</span>
                </div>
             </div>
          </div>
@@ -628,12 +641,14 @@
 
          <p>Use <code>.site-header</code>, <code>.site-main</code> and <code>.site-footer</code> for the main sectioning elements.</p>
 
+         <p><code>.site-header</code> contains <code>.site-nav</code> which is not responsive by default but can be appended by <code>.responsive-nav</code> to collapse and show a hamburger icon on smaller screens. It can carry <code>.responsive-nav-animated</code> to add a sliding animation to the nav.</p>
+
 
          <h3>Grid</h3>
 
          <div class="example-grid">
 
-            <div class="bottom-gap">
+            <div class="m-b-1">
                <div class="grid">
                   <div class="cell"><div class="inner">space</div></div>
                   <div class="cell"><div class="inner">can be</div></div>
@@ -642,34 +657,34 @@
                </div>
             </div>
 
-            <div class="bottom-gap">
+            <div class="m-b-1">
                <div class="grid">
-                  <div class="cell -4of12"><div class="inner">4</div></div>
-                  <div class="cell -4of12"><div class="inner">4</div></div>
-                  <div class="cell -4of12"><div class="inner">4</div></div>
+                  <div class="cell cell-4"><div class="inner">or</div></div>
+                  <div class="cell cell-4"><div class="inner">fixed</div></div>
+                  <div class="cell cell-4"><div class="inner">4</div></div>
                </div>
             </div>
 
-            <div class="bottom-gap">
+            <div class="m-b-1">
                <div class="grid">
-                  <div class="cell -4of12"><div class="inner">4</div></div>
-                  <div class="cell -8of12"><div class="inner">8</div></div>
+                  <div class="cell cell-4"><div class="inner">4</div></div>
+                  <div class="cell cell-8"><div class="inner">8</div></div>
                </div>
             </div>
 
-            <div class="grid">
-               <div class="cell"><div class="inner">1</div></div>
-               <div class="cell"><div class="inner">1</div></div>
-               <div class="cell"><div class="inner">1</div></div>
-               <div class="cell"><div class="inner">1</div></div>
-               <div class="cell"><div class="inner">1</div></div>
-               <div class="cell"><div class="inner">1</div></div>
-               <div class="cell"><div class="inner">1</div></div>
-               <div class="cell"><div class="inner">1</div></div>
-               <div class="cell"><div class="inner">1</div></div>
-               <div class="cell"><div class="inner">1</div></div>
-               <div class="cell"><div class="inner">1</div></div>
-               <div class="cell"><div class="inner">1</div></div>
+            <div class="grid m-b-2">
+               <div class="cell cell-1"><div class="inner">1</div></div>
+               <div class="cell cell-1"><div class="inner">1</div></div>
+               <div class="cell cell-1"><div class="inner">1</div></div>
+               <div class="cell cell-1"><div class="inner">1</div></div>
+               <div class="cell cell-1"><div class="inner">1</div></div>
+               <div class="cell cell-1"><div class="inner">1</div></div>
+               <div class="cell cell-1"><div class="inner">1</div></div>
+               <div class="cell cell-1"><div class="inner">1</div></div>
+               <div class="cell cell-1"><div class="inner">1</div></div>
+               <div class="cell cell-1"><div class="inner">1</div></div>
+               <div class="cell cell-1"><div class="inner">1</div></div>
+               <div class="cell cell-1"><div class="inner">1</div></div>
             </div>
 
          </div>
@@ -678,23 +693,27 @@
             <div class="cell">
                <h4><code>.grid</code> modifiers</h4>
                <ul>
-                  <li>To change padding use <code>-narrow</code> or <code>-wide</code></li>
+                  <li>To change spacing use <code>grid-narrow</code> or <code>grid-wide</code></li>
+               </ul>
+               <ul>
                   <li>To align items with <strong>align-items</strong> use
                      <ul>
-                        <li><code>-top</code>: To top</li>
-                        <li><code>-middle</code>: To middle</li>
-                        <li><code>-bottom</code>: To bottom</li>
-                        <li><code>-stretch</code>: Stretch items</li>
-                        <li><code>-baseline</code>: To baseline</li>
+                        <li><code>grid-top</code>: To top</li>
+                        <li><code>grid-middle</code>: To middle</li>
+                        <li><code>grid-bottom</code>: To bottom</li>
+                        <li><code>grid-stretch</code>: Stretch items</li>
+                        <li><code>grid-baseline</code>: To baseline</li>
                      </ul>
                   </li>
+               </ul>
+               <ul>
                   <li>To layout contents with <strong>justify-content</strong> use
                      <ul>
-                        <li><code>-left</code>: To left</li>
-                        <li><code>-center</code>: To center</li>
-                        <li><code>-right</code>: To right</li>
-                        <li><code>-between</code>: Add spaces between items</li>
-                        <li><code>-around</code>: Add spaces around items</li>
+                        <li><code>grid-left</code>: To left</li>
+                        <li><code>grid-center</code>: To center</li>
+                        <li><code>grid-right</code>: To right</li>
+                        <li><code>grid-between</code>: Add spaces between items</li>
+                        <li><code>grid-around</code>: Add spaces around items</li>
                      </ul>
                   </li>
                </ul>
@@ -702,18 +721,23 @@
             <div class="cell">
                <h4><code>.cell</code> modifiers</h4>
                <ul>
-                  <li><code>-1of12</code>: Set item width to 8.3% of parent</li>
-                  <li><code>-2of12</code>: Set item width to 16.7% of parent</li>
-                  <li><code>-3of12</code>: Set item width to 25% of parent</li>
-                  <li><code>-4of12</code>: Set item width to 33% of parent</li>
-                  <li><code>-5of12</code>: Set item width to 41.7% of parent</li>
-                  <li><code>-6of12</code>: Set item width to 50% of parent</li>
-                  <li><code>-7of12</code>: Set item width to 58.3% of parent</li>
-                  <li><code>-8of12</code>: Set item width to 66.7% of parent</li>
-                  <li><code>-9of12</code>: Set item width to 75% of parent</li>
-                  <li><code>-10of12</code>: Set item width to 83.3% of parent</li>
-                  <li><code>-11of12</code>: Set item width to 91.7% of parent</li>
-                  <li><code>-12of12</code>: Set item width to 100% of parent</li>
+                  <li><code>grid-top</code>: To top</li>
+                  <li><code>grid-middle</code>: To middle</li>
+                  <li><code>grid-bottom</code>: To bottom</li>
+               </ul>
+               <ul>
+                  <li><code>cell-1</code>: Set item width to 8.3% of parent</li>
+                  <li><code>cell-2</code>: Set item width to 16.7% of parent</li>
+                  <li><code>cell-3</code>: Set item width to 25% of parent</li>
+                  <li><code>cell-4</code>: Set item width to 33% of parent</li>
+                  <li><code>cell-5</code>: Set item width to 41.7% of parent</li>
+                  <li><code>cell-6</code>: Set item width to 50% of parent</li>
+                  <li><code>cell-7</code>: Set item width to 58.3% of parent</li>
+                  <li><code>cell-8</code>: Set item width to 66.7% of parent</li>
+                  <li><code>cell-9</code>: Set item width to 75% of parent</li>
+                  <li><code>-cell-10</code>: Set item width to 83.3% of parent</li>
+                  <li><code>-cell-11</code>: Set item width to 91.7% of parent</li>
+                  <li><code>-cell-12</code>: Set item width to 100% of parent</li>
                </ul>
             </div>
          </div>
@@ -728,7 +752,7 @@
 
       </main>
 
-      <footer class="site-footer">
+      <footer class="site-footer dashed-top">
          Footer text – <a href="#" title="Link">Link</a> <a href="#" title="Link">Link</a>
       </footer>
 
