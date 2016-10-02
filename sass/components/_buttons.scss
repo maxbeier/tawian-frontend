@@ -74,6 +74,21 @@
   &.btn-ghost { @include button-ghost ($grey-600, $grey-800); }
 }
 
+.btn[disabled] {
+  @include button ($grey-100, $grey-100);
+  cursor: not-allowed;
+
+  &,
+  &:hover { color: $grey-400; }
+
+  &.btn-ghost,
+  &.btn-ghost:hover {
+    background-color: transparent;
+    border-color: $grey-400;
+    color: $grey-400;
+  }
+}
+
 .btn-primary { @include button ($blue, $blue-700); }
 .btn-success { @include button ($green, $green-700); }
 .btn-info    { @include button ($cyan, $cyan-700); }
