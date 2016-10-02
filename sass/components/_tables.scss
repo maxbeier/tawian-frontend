@@ -1,0 +1,61 @@
+// Table ------------------------------------------------------
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  vertical-align: top;
+  border: $border-width solid $grey-300;
+  padding: .5rem .5rem .4rem;
+}
+
+thead th {
+  color: $grey-800;
+  text-align: center;
+  background-color: $grey-200;
+}
+
+caption {
+  caption-side: bottom;
+  padding-top: .5rem;
+  color: $grey;
+}
+
+
+// Modifiers --------------------------------------------------
+
+.table-fixed { table-layout: fixed; }
+
+.table-striped tr:nth-child(even) td {
+  background-color: $grey-100;
+}
+
+.table-hover tr:hover td {
+  background-color: $grey-200;
+}
+
+.table-narrow td,
+.table-narrow th { padding: .25rem .25rem .2rem; }
+
+.table-wide td,
+.table-wide th { padding: 1rem 1rem .8rem; }
+
+
+// States -----------------------------------------------------
+
+@mixin table-state ($color) {
+   &,
+   & > td {
+    background-color: $color;
+  }
+}
+
+.table-active  { @include table-state ($blue-100); }
+.table-success { @include table-state ($green-100); }
+.table-info    { @include table-state ($cyan-100); }
+.table-warning { @include table-state ($orange-100); }
+.table-error   { @include table-state ($red-100); }

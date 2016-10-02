@@ -263,37 +263,124 @@
 
          <h3>Table</h3>
 
-         <table>
-            <caption>Caption of the Table</caption>
+         <table class="table-fixed">
+            <caption>Table with fixed layout and caption</caption>
             <thead>
                <tr>
-                  <th>editor</th>
-                  <th>speed</th>
-                  <th>extension</th>
-                  <th>interface</th>
+                  <th>states</th>
+                  <th>param</th>
+                  <th>param</th>
+                  <th>param</th>
                </tr>
             </thead>
             <tbody>
                <tr>
-                  <td>sublime</td>
-                  <td>90</td>
-                  <td>80</td>
-                  <td>70</td>
+                  <td>cell states</td>
+                  <td class="table-success">90</td>
+                  <td class="table-warning">80</td>
+                  <td class="table-error">70</td>
                </tr>
                <tr>
-                  <td>atom</td>
+                  <td>normal state</td>
                   <td>60</td>
                   <td>85</td>
                   <td>80</td>
                </tr>
-               <tr>
-                  <td>vscode</td>
+               <tr class="table-info">
+                  <td>row state</td>
                   <td>80</td>
                   <td>65</td>
                   <td>60</td>
                </tr>
             </tbody>
          </table>
+
+         <div class="grid">
+            <div class="cell">
+               <table class="table-striped table-narrow">
+                  <thead>
+                     <tr>
+                        <th>classes</th>
+                        <th>param</th>
+                        <th>param</th>
+                        <th>param</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>narrow</td>
+                        <td>✗</td>
+                        <td>✗</td>
+                        <td>✔</td>
+                     </tr>
+                     <tr>
+                        <td>striped</td>
+                        <td>✔</td>
+                        <td>✔</td>
+                        <td>✔</td>
+                     </tr>
+                     <tr>
+                        <td>/</td>
+                        <td>✔</td>
+                        <td>✗</td>
+                        <td>✔</td>
+                     </tr>
+                     <tr>
+                        <td>/</td>
+                        <td>✔</td>
+                        <td>✔</td>
+                        <td>✗</td>
+                     </tr>
+                     <tr>
+                        <td>/</td>
+                        <td>✔</td>
+                        <td>✗</td>
+                        <td>✔</td>
+                     </tr>
+                     <tr>
+                        <td>/</td>
+                        <td>✔</td>
+                        <td>✔</td>
+                        <td>✗</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+            <div class="cell">
+               <table class="table-hover table-wide">
+                  <thead>
+                     <tr>
+                        <th>classes</th>
+                        <th>param</th>
+                        <th>param</th>
+                        <th>param</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>wide</td>
+                        <td>✗</td>
+                        <td>✗</td>
+                        <td>✔</td>
+                     </tr>
+                     <tr>
+                        <td>hoverable</td>
+                        <td>✔</td>
+                        <td>✗</td>
+                        <td>✔</td>
+                     </tr>
+                     <tr>
+                        <td>/</td>
+                        <td>✔</td>
+                        <td>✔</td>
+                        <td>✗</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+
+
 
 
          <h3>List Group</h3>

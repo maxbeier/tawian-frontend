@@ -5,6 +5,7 @@
 @import 'list-group';
 @import 'loading-indicator';
 @import 'progress-bar';
+@import 'tables';
 
 
 // Code ------------------------------------------------------
@@ -35,32 +36,6 @@ pre code {
   background-color: transparent;
 }
 
-
-// Tables ----------------------------------------------------
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-td,
-th {
-  vertical-align: top;
-  border: $border-width solid $grey-300;
-  padding: .5rem .5rem .4rem;
-}
-
-thead th {
-  color: $grey-800;
-  text-align: center;
-  background-color: $grey-200;
-}
-
-caption {
-  caption-side: bottom;
-  padding-top: .5rem;
-  color: $grey;
 }
 
 
