@@ -72,6 +72,14 @@ figcaption {
 // Quotes -----------------------------------------------------
 
 blockquote {
-  border-left: .5rem solid $grey-300;
+  overflow: hidden;
   padding-left: 1rem;
+  border-left: .5rem solid $grey-300;
+}
+
+cite {
+  float: right;
+  color: $grey;
+  &:before { content: "– "; }
+}
 }
