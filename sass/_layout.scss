@@ -72,6 +72,7 @@ ol ul { margin-bottom: 0; }
 
 .site-nav {
   display: inline-flex;
+  margin-left: auto;
 
   ul {
     display: inline-flex;
@@ -79,10 +80,61 @@ ol ul { margin-bottom: 0; }
     align-items: center;
     justify-content: flex-end;
     margin: 0;
-    margin-left: -1rem;
   }
 
   li:before { display: none; }
+
+  @media #{$medium} {
+    flex: 1;
+    flex-direction: column;
+    text-align: right;
+
+    li { padding-top: 1rem; }
+  }
+}
+
+.responsive-nav {
+  display: none;
+  flex: 1;
+  text-align: right;
+
+  label {
+    margin-right: -.5rem;
+    padding: 0 .5rem;
+    cursor: pointer;
+    font-size: 2rem;
+    line-height: 1;
+    color: $blue-grey-600;
+  }
+
+  & + input[type=checkbox] { display: none; }
+
+  @media #{$medium} {
+    display: block;
+
+    & ~ .site-nav {
+      display: none;
+      min-width: 100%; // so it gets its own row
+      flex-basis: 100%;
+    }
+
+    & + input[type=checkbox]:checked ~ .site-nav { display: block; }
+
+    // Animated Version (uses a magic number and timing is slighly off)
+    &.responsive-nav-animated {
+      & ~ .site-nav {
+        display: block;
+        max-height: 0;
+        transition: max-height .5s ease-out;
+        overflow: hidden;
+      }
+
+      & + input[type=checkbox]:checked ~ .site-nav {
+        max-height: 10rem; // magic number; should be as near at the real value as possible to reduce perceived delays while the animation hides unused space
+        transition-timing-function: ease-in;
+      }
+    }
+  }
 }
 
 .site-main {
