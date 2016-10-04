@@ -7,7 +7,12 @@
 
 ::selection { background: $blue-100; }
 
-html {
+html,
+button,
+input,
+optgroup,
+select,
+textarea {
   color: $grey-900;
   font-size: 16px;
   line-height: 1.6;
