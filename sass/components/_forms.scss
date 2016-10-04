@@ -106,7 +106,7 @@ select.form-control {
   @media #{$medium} { padding: 0; }
 }
 
-.form-control[type="file"] { padding-top: 0; }
+.form-control[type="file"] { line-height: 1; }
 
 
 // States -----------------------------------------------------
