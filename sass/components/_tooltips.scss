@@ -1,5 +1,7 @@
 // Based on https://github.com/mightyCrow/wenk
 
+@keyframes tooltip-appear { to { opacity: 1; } }
+
 [data-tooltip] {
   position: relative;
 
@@ -19,9 +21,14 @@
     background-color: $grey-50;
     white-space: pre;
     color: $grey-900;
+    opacity: 0;
   }
 
-  &:hover:after { display: block; }
+  &:focus:after,
+  &:hover:after {
+    display: block;
+    animation: tooltip-appear .1s ease-in .4s forwards;
+  }
 
   &.tooltip-bottom:after {
     bottom: auto;
