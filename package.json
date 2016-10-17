@@ -1,0 +1,20 @@
+{
+  "name": "tawian-frontend",
+  "version": "1.0.0",
+  "description": "Simple CSS framework with a markdowny look",
+  "main": "tawian-frontend.css",
+  "style": "tawian-frontend.css",
+  "files": [
+    "LICENSE",
+    "tawian-frontend.css"
+  ],
+  "repository": "tawian/tawian-frontend",
+  "author": "Maximilian Beier",
+  "license": "MIT",
+  "keywords": [
+    "frontend",
+    "framework"
+  ],
+  "bugs": "https://github.com/tawian/tawian-frontend/issues",
+  "homepage": "http://tawian.io/tawian-frontend/"
+}
