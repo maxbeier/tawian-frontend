@@ -107,14 +107,15 @@
 }
 
 .btn-group {
-  overflow: auto;
   display: inline-flex;
   flex-wrap: wrap;
   align-items: center;
+  padding-left: $border-width;
   vertical-align: top;
 
   .btn {
     flex-grow: 1;
+    margin-left: -$border-width;
     border-radius: 0;
     word-break: break-all;
     word-break: break-word; // If supported
@@ -123,5 +124,5 @@
     &:last-of-type { border-radius: 0 $button-radius $button-radius 0; }
   }
 
-  .btn-ghost:not(:first-of-type) { margin-left: -$border-width; }
+  .btn-ghost:not(:first-of-type) { margin-top: -$border-width; }
 }
