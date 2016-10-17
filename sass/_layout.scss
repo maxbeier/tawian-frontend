@@ -29,10 +29,14 @@ h6 {
   margin-top: 2rem;
   margin-bottom: 2rem;
 
+  &.pure,
+  .grid & {
+    &:before { display: none; }
+  }
+
   .grid & {
     margin-top: 0rem;
     margin-bottom: 1rem;
-    &:before { display: none; }
   }
 
   & > small { color: $grey; }
