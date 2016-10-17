@@ -107,7 +107,13 @@ ol ul { margin-bottom: 0; }
     margin: 0;
   }
 
-  li:before { display: none; }
+  li {
+    padding: 0 1ch;
+
+    &:last-child { padding-right: 0; }
+    &:before { display: none; }
+  }
+
 
   @media #{$medium} {
     flex: 1;
