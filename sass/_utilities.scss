@@ -58,6 +58,12 @@
   font-size: 1.25em;
 }
 
+.truncate {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 .text-left     { text-align: left; }
 .text-center   { text-align: center; }
 .text-right    { text-align: right; }
