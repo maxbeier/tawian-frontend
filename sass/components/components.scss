@@ -27,6 +27,11 @@ pre {
   word-wrap: break-word;
   word-break: break-all;
   page-break-inside: avoid;
+
+  &.scroll {
+    overflow: auto;
+    white-space: pre;
+  }
 }
 
 pre code {
