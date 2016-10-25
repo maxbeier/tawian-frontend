@@ -44,18 +44,22 @@ caption {
 .table-wide td,
 .table-wide th { padding: 1rem 1rem .8rem; }
 
+thead.text-left > tr > th { text-align: left; }
+
 
 // States -----------------------------------------------------
 
-@mixin table-state ($color) {
+@mixin table-state ($color, $borderColor) {
    &,
    & > td {
-    background-color: $color;
+    background-color: $color !important;
+    border-top-color: $borderColor;
+    border-bottom-color: $borderColor;
   }
 }
 
-.table-active  { @include table-state ($blue-100); }
-.table-success { @include table-state ($green-100); }
-.table-info    { @include table-state ($cyan-100); }
-.table-warning { @include table-state ($orange-100); }
-.table-error   { @include table-state ($red-100); }
+.table-active  { @include table-state ($blue-100, $blue-200); }
+.table-success { @include table-state ($green-100, $green-200); }
+.table-info    { @include table-state ($cyan-100, $cyan-200); }
+.table-warning { @include table-state ($orange-100, $orange-200); }
+.table-error   { @include table-state ($red-100, $red-200); }
