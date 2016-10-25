@@ -126,6 +126,4 @@
     &:first-of-type { border-radius: $button-radius 0 0 $button-radius; }
     &:last-of-type { border-radius: 0 $button-radius $button-radius 0; }
   }
-
-  .btn-ghost:not(:first-of-type) { margin-top: -$border-width; }
 }
