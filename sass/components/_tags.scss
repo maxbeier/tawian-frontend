@@ -1,0 +1,30 @@
+@mixin tag ($color) {
+  color: $white;
+  background-color: $color;
+  box-shadow: 0 -1px 0 3px $color;
+}
+
+.tag {
+  @include tag ($grey);
+
+  position: relative;
+  top: -0.1em;
+  padding: 0 .25em;
+  border-radius: 1px;
+  font-size: .8em;
+  font-weight: normal;
+  line-height: 1;
+  white-space: nowrap;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility; // more readable with smaller font sizes
+
+  &:empty { display: none; } // don't show if empty
+
+  &.tag-primary { @include tag ($blue); }
+  &.tag-success { @include tag ($green); }
+  &.tag-info    { @include tag ($cyan); }
+  &.tag-warning { @include tag ($orange); }
+  &.tag-error   { @include tag ($red); }
+}
+
+
