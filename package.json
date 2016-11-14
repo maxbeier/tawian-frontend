@@ -20,6 +20,6 @@
   "scripts": {
     "build": "sass sass/index.scss --style compressed | postcss --use autoprefixer > tawian-frontend.css",
     "watch": "fswatch -o sass/* | xargs -n1 sh -c 'sass sass/index.scss --style compressed | postcss --use autoprefixer > tawian-frontend.css'",
-    "preversion": "npm run build"
+    "version": "npm run build; git add tawian-frontend.css"
   }
 }
