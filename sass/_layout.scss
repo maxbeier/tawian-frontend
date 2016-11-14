@@ -134,6 +134,8 @@ ol ul { margin-bottom: 0; }
     }
   }
 
+  .active { font-weight: bold; }
+
   @media #{$medium} {
     flex: 1;
     flex-direction: column;
