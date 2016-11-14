@@ -115,17 +115,22 @@ ol ul { margin-bottom: 0; }
     padding-left: 2ch;
 
     &:last-child { padding-right: 0; }
-    &:before,
-    &:last-child:after { display: none; }
+    &:before { display: none; }
   }
 
-  &.nav-seperated li {
-    padding-left: 1ch;
+  &.nav-seperated {
+    overflow: hidden;
 
-    &:after {
-      content: "|";
-      color: $grey-200;
+    & > ul { margin-right: -2ch; }
+
+    li {
       padding-left: 1ch;
+
+      &:after {
+        content: "|";
+        color: $grey-200;
+        padding-left: 1ch;
+      }
     }
   }
 
