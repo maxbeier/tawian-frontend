@@ -112,12 +112,22 @@ ol ul { margin-bottom: 0; }
   }
 
   li {
-    padding: 0 1ch;
+    padding-left: 2ch;
 
     &:last-child { padding-right: 0; }
-    &:before { display: none; }
+    &:before,
+    &:last-child:after { display: none; }
   }
 
+  &.nav-seperated li {
+    padding-left: 1ch;
+
+    &:after {
+      content: "|";
+      color: $grey-200;
+      padding-left: 1ch;
+    }
+  }
 
   @media #{$medium} {
     flex: 1;
