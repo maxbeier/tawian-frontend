@@ -101,8 +101,14 @@ cite {
 // Inline Text Elements ---------------------------------------
 
 mark {
+  box-decoration-break: clone;
   background-color: $yellow-200;
   box-shadow: 0 -1px 0 3px $yellow-200;
+
+  mark {
+    background-color: $yellow-600;
+    box-shadow: 0 -1px 0 3px $yellow-600;
+  }
 }
 
 abbr[title] {
