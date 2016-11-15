@@ -17,23 +17,17 @@ npm install --save tawian-frontend
 ```
 
 
-## Look
+## Preview
 
 [![Screenshot](https://raw.githubusercontent.com/tawian/tawian-frontend/master/screenshot.png)](http://tawian.io/tawian-frontend/)
 
 
 ## Build
 
-Simple
-
 ```sh
-sass sass/index.scss --style compressed | postcss --use autoprefixer > tawian-frontend.css
-```
+npm run build
 
-With watcher
-
-```sh
-fswatch -o sass/* | xargs -n1 sh -c 'sass sass/index.scss --style compressed | postcss --use autoprefixer > tawian-frontend.css'
+npm run watch  # builds continuously
 ```
 
 
