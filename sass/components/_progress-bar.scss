@@ -38,7 +38,7 @@
   }
 
   &.progress-success > div { background-color: $green; }
-  &.progress-error > div { background-color: $red; }
-  &.progress-warning > div { background-color: $orange; }
   &.progress-info > div { background-color: $cyan; }
+  &.progress-warning > div { background-color: $orange; }
+  &.progress-error > div { background-color: $red; }
 }

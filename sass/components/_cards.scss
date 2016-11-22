@@ -26,7 +26,7 @@
   .card-body { padding: .8rem 1rem .7rem; }
 
   &.card-success { @include card ($green); }
-  &.card-info    { @include card ($orange); }
-  &.card-warning { @include card ($cyan); }
+  &.card-info    { @include card ($cyan); }
+  &.card-warning { @include card ($orange); }
   &.card-error   { @include card ($red); }
 }
