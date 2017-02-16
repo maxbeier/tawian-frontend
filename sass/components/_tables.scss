@@ -49,17 +49,15 @@ thead.text-left > tr > th { text-align: left; }
 
 // States -----------------------------------------------------
 
-@mixin table-state ($color, $borderColor) {
-   &,
-   & > td {
-    background-color: $color !important;
-    border-top-color: $borderColor;
-    border-bottom-color: $borderColor;
-  }
+@mixin cell-border ($borderColor) {
+  border-top-color: $borderColor;
+  border-bottom-color: $borderColor;
 }
 
-.table-active  { @include table-state ($blue-100, $blue-200); }
-.table-success { @include table-state ($green-100, $green-200); }
-.table-info    { @include table-state ($cyan-100, $cyan-200); }
-.table-warning { @include table-state ($orange-100, $orange-200); }
-.table-error   { @include table-state ($red-100, $red-200); }
+table {
+  .bg-active  { @include cell-border ($blue-200); }
+  .bg-success { @include cell-border ($green-200); }
+  .bg-info    { @include cell-border ($cyan-200); }
+  .bg-warning { @include cell-border ($orange-200); }
+  .bg-error   { @include cell-border ($red-200); }
+}

@@ -4,6 +4,16 @@
 .inner { padding: .8rem 1rem .7rem                !important; }
 .inner-wide { padding: 1.6rem 2rem 1.4rem         !important; }
 
+.p-t-0 { padding-top: 0                           !important; }
+.p-t-1 { padding-top: 1rem                        !important; }
+.p-t-2 { padding-top: 2rem                        !important; }
+.p-t-3 { padding-top: 3rem                        !important; }
+
+.p-b-0 { padding-bottom: 0                        !important; }
+.p-b-1 { padding-bottom: 1rem                     !important; }
+.p-b-2 { padding-bottom: 2rem                     !important; }
+.p-b-3 { padding-bottom: 3rem                     !important; }
+
 .m-t-0 { margin-top: 0                            !important; }
 .m-t-1 { margin-top: 1rem                         !important; }
 .m-t-2 { margin-top: 2rem                         !important; }
@@ -68,12 +78,25 @@
 .text-center   { text-align: center; }
 .text-right    { text-align: right; }
 
+.text-bold { font-weight: bold; }
+.text-italic { font-style: italic; }
+
+
+// Color ------------------------------------------------------
+
+@mixin bg ($color) {
+  background-color: $color !important;
+}
+
+.bg-active  { @include bg ($blue-100); }
+.bg-success { @include bg ($green-100); }
+.bg-info    { @include bg ($cyan-100); }
+.bg-warning { @include bg ($orange-100); }
+.bg-error   { @include bg ($red-100); }
+
 .text-muted   { color: $grey; }
 .text-primary { color: $blue; }
 .text-success { color: $green; }
 .text-info    { color: $cyan; }
 .text-warning { color: $orange; }
 .text-error   { color: $red; }
-
-.text-bold { font-weight: bold; }
-.text-italic { font-style: italic; }
