@@ -27,7 +27,7 @@
   &:focus:after,
   &:hover:after {
     display: block;
-    animation: tooltip-appear .1s ease-in .4s forwards;
+    animation: tooltip-appear .1s ease-in .1s forwards;
   }
 
   &.tooltip-bottom:after {
