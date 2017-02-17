@@ -4,10 +4,29 @@
 }
 
 .alert {
+  position: relative;
   padding: .8rem 1rem .7rem;
   border: $border-width solid $grey-300;
   border-radius: $button-radius;
   color: $grey-300;
+
+  .close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0.4rem 1rem;
+    opacity: .5;
+    border: 0;
+    background: none;
+    font-size: 1.5rem;
+    color: inherit;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+      text-decoration: none;
+    }
+  }
 }
 
 .alert-success { @include alert ($green); }
