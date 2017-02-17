@@ -85,15 +85,12 @@
 
 // Color ------------------------------------------------------
 
-@mixin bg ($color) {
-  background-color: $color !important;
-}
-
-.bg-active  { @include bg ($blue-100); }
-.bg-success { @include bg ($green-100); }
-.bg-info    { @include bg ($cyan-100); }
-.bg-warning { @include bg ($orange-100); }
-.bg-error   { @include bg ($red-100); }
+.bg-muted   { background-color: $grey-100         !important; }
+.bg-active  { background-color: $blue-100         !important; }
+.bg-success { background-color: $green-100        !important; }
+.bg-info    { background-color: $cyan-100         !important; }
+.bg-warning { background-color: $orange-100       !important; }
+.bg-error   { background-color: $red-100          !important; }
 
 .text-muted   { color: $grey; }
 .text-primary { color: $blue; }
