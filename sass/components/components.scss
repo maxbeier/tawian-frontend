@@ -111,8 +111,8 @@ mark {
 }
 
 abbr[title] {
-  @extend .dashed-bottom;
   text-decoration: none;
+  border-bottom: 2px dashed $grey-300;
 }
 
 kbd {
