@@ -1,25 +1,23 @@
+// top right bottom left
+$button-border-width: 2px;
+$border-strength: .15;
+$dark: rgba(0,0,0,$border-strength);
+$light: rgba(255,255,255,$border-strength);
+$border-outset: $light $dark $dark $light;
+$border-inset: $dark $light $light $dark;
+
 @mixin button ($color, $hover-color) {
-  color: $white;
   background-color: $color;
-  border-color: $color;
 
   &:hover,
-  &:focus:not(.btn-ghost) {
+  &:focus {
     background-color: $hover-color;
-    border-color: $hover-color;
-    color: $white;
   }
 
   &.btn-ghost {
-    @include button-ghost ($color, $hover-color);
+    border-color: $color;
+    color: $color;
   }
-}
-
-@mixin button-ghost ($color, $hover-color) {
-  color: $color;
-
-  &:hover,
-  &:focus { color: $hover-color; }
 }
 
 
@@ -28,67 +26,34 @@
 .btn {
   position: relative;
   padding: .8rem 1.5rem .7rem;
-  border-width: $border-width;
+  border-width: $button-border-width;
   border-style: solid;
   border-radius: $button-radius;
+  border-color: $border-outset;
   outline: none;
   cursor: pointer;
   user-select: none;
   line-height: 1;
+  color: $white;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    border-color: $border-inset;
+  }
 
   &:active {
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2);
   }
 
-  &:hover {
-    text-decoration: none;
-  }
-
-  &.btn-ghost,
-  &.btn-ghost:hover {
-    background-color: transparent;
-  }
-}
-
-.btn-block { width: 100%; }
-
-.btn-link {
-  border-color: transparent;
-  background-color: transparent;
-  color: $blue;
-
-  &:hover,
-  &:focus { color: $blue-700; }
-}
-
-
-// Button States ----------------------------------------------
-
-.btn-default {
-  @include button ($grey-200, $grey-300);
-  color: $grey-800;
-
-  &:hover,
-  &:focus:not(.btn-ghost) { color: $grey-800; } // a.btn-default
-
   &.btn-ghost {
-    @include button-ghost ($grey-600, $grey-800);
-    border-color: $grey-600;
-  }
-}
-
-.btn[disabled] {
-  @include button ($grey-100, $grey-100);
-  cursor: not-allowed;
-
-  &,
-  &:hover { color: $grey-400; }
-
-  &.btn-ghost,
-  &.btn-ghost:hover {
     background-color: transparent;
-    border-color: $grey-400;
-    color: $grey-400;
+
+    &:hover,
+    &:focus {
+      color: $white;
+      border-color: $border-inset;
+    }
   }
 }
 
@@ -97,6 +62,53 @@
 .btn-info    { @include button ($cyan, $cyan-700); }
 .btn-warning { @include button ($orange, $orange-700); }
 .btn-error   { @include button ($red, $red-700); }
+
+.btn-default {
+  background-color: $grey-200;
+  color: $grey-700;
+
+  &:hover,
+  &:focus {
+    background-color: $grey-400;
+    color: $white;
+  }
+
+  &.btn-ghost {
+    border-color: $grey-400;
+    color: $grey-700;
+  }
+}
+
+.btn-link {
+  border-color: transparent;
+  background-color: transparent;
+  color: $blue;
+
+  &:hover,
+  &:focus {
+    border-color: transparent;
+    color: $blue-700;
+  }
+}
+
+.btn[disabled] {
+  cursor: not-allowed;
+
+  &,
+  &:hover,
+  &:focus {
+    background-color: $grey-100;
+    border-color: $border-outset;
+    color: $grey-400;
+  }
+
+  &.btn-ghost,
+  &.btn-ghost:hover {
+    background-color: transparent;
+    border-color: $grey-400;
+    color: $grey-400;
+  }
+}
 
 
 // Button Group -----------------------------------------------
@@ -113,12 +125,10 @@
   display: inline-flex;
   flex-wrap: wrap;
   align-items: center;
-  padding-left: $border-width;
   vertical-align: top;
 
   .btn {
     flex-grow: 1;
-    margin-left: -$border-width;
     border-radius: 0;
     word-break: break-all;
     word-break: break-word; // If supported
@@ -126,4 +136,6 @@
     &:first-of-type { border-radius: $button-radius 0 0 $button-radius; }
     &:last-of-type { border-radius: 0 $button-radius $button-radius 0; }
   }
+
+  .btn-ghost:not(:first-child) { margin-left: -$button-border-width; }
 }
