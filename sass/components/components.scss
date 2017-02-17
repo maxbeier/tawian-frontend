@@ -130,6 +130,26 @@ kbd {
 }
 
 
+// Details & Summary ------------------------------------------
+
+details {
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  &[open] summary { font-weight: bold; }
+}
+
+summary {
+  margin-bottom: 1rem;
+  margin-left: -1rem;
+  outline: none;
+
+  &:hover {
+    background-color: $grey-100;
+    box-shadow: -.5rem -.1rem 0 .5rem $grey-100;
+    cursor: pointer;
+  }
+}
+
 // Footnotes --------------------------------------------------
 
 .footnotes {
