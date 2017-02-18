@@ -45,105 +45,103 @@ textarea {
 
 .form {
   @media #{$small} { width: 100%; }
+}
 
 
-  // Group ------------------------------------------------------
+// Group ------------------------------------------------------
 
-  .form-group {
+.form-group {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+  margin-bottom: 2rem;
+}
+
+
+// Label ------------------------------------------------------
+
+.form-label {
+  order: 1;
+  position: relative;
+  min-width: $form-label-width;
+  height: 2rem;
+  color: $grey-800;
+  border-bottom: $form-border-width solid $grey-300;
+  line-height: 2rem;
+
+  @media #{$medium} {
+    border-bottom: none;
+    min-width: 100%;
+    flex-basis: 100%;
+  }
+}
+
+
+// Control ----------------------------------------------------
+
+html .form-control { // specificity fight against input[type]
+  flex: 1;
+  order: 2;
+  min-width: calc(100% - #{$form-label-width});
+  padding: .25rem 1rem 0;
+  border: 0;
+  border-bottom: $form-border-width solid $grey-300;
+  border-radius: 0; // iOS
+
+  &:focus { border-color: $grey-500; }
+
+  label + label { padding-left: 2rem; }
+
+  @media #{$medium} {
     display: flex;
     flex-wrap: wrap;
-    overflow: auto;
-    margin-bottom: 2rem;
-  }
+    min-width: 100%;
+    flex-basis: 100%;
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
 
-
-  // Label ------------------------------------------------------
-
-  .form-label {
-    order: 1;
-    position: relative;
-    min-width: $form-label-width;
-    height: 2rem;
-    color: $grey-800;
-    border-bottom: $form-border-width solid $grey-300;
-    line-height: 2rem;
-
-    @media #{$medium} {
-      border-bottom: none;
-      min-width: 100%;
-      flex-basis: 100%;
-    }
-  }
-
-
-  // Control ----------------------------------------------------
-
-  .form-control {
-    flex: 1;
-    order: 2;
-    min-height: 2rem;
-    min-width: calc(100% - #{$form-label-width});
-    padding: .25rem 1rem 0;
-    border: 0;
-    border-bottom: $form-border-width solid $grey-300;
-    border-radius: 0; // iOS
-
-    &:focus { border-color: $grey-500; }
-
-    label + label { padding-left: 2rem; }
-
-    @media #{$medium} {
-      display: flex;
-      flex-wrap: wrap;
-      min-width: 100%;
-      flex-basis: 100%;
-      padding-top: 0;
-      padding-left: 0;
-      padding-right: 0;
-
-      label {
-        // flex: 1;
-        padding-right: 1rem;
-        // white-space: nowrap;
-      }
-
-      label + label { padding-left: 0; }
-    }
-  }
-
-  textarea.form-control {
-    padding-left: calc(1rem - #{$form-border-width});
-    // resize: none;
-    border-bottom: $form-border-width solid $grey-300;
-    border-left: $form-border-width solid $grey-300;
-
-    & + .form-label:before { // paint over the little border
-      position: absolute;
-      content: '';
-      width: $form-border-width;
-      background-color: $white;
-      right: -$form-border-width;
-      top: 0;
-      bottom: 0;
-
-      @media #{$medium} { display: none; }
+    label {
+      // flex: 1;
+      padding-right: 1rem;
+      // white-space: nowrap;
     }
 
-    @media #{$medium} {
-      padding-left: 0;
-      border-left: none;
-    }
+    label + label { padding-left: 0; }
   }
-
-  select.form-control {
-    border-radius: 0;
-
-    @media #{$medium} { padding: 0; }
-  }
-
-  .form-control[type="file"] { line-height: 1; }
-
 }
+
+textarea.form-control {
+  padding-left: calc(1rem - #{$form-border-width});
+  // resize: none;
+  border-bottom: $form-border-width solid $grey-300;
+  border-left: $form-border-width solid $grey-300;
+
+  & + .form-label:before { // paint over the little border
+    position: absolute;
+    content: '';
+    width: $form-border-width;
+    background-color: $white;
+    right: -$form-border-width;
+    top: 0;
+    bottom: 0;
+
+    @media #{$medium} { display: none; }
+  }
+
+  @media #{$medium} {
+    padding-left: 0;
+    border-left: none;
+  }
+}
+
+select.form-control {
+  border-radius: 0;
+
+  @media #{$medium} { padding: 0; }
+}
+
+.form-control[type="file"] { line-height: 1; }
 
 
 // States -----------------------------------------------------
@@ -151,9 +149,15 @@ textarea {
 @mixin state ($color, $focus-color) {
   .help-block,
   .form-label { color: $color; }
-  .form-label { border-color: $color; }
-  .form-control { border-bottom-color: $color; }
-  .form-control:focus { border-bottom-color: $focus-color; }
+
+  input,
+  textarea,
+  select,
+  .form-label,
+  .form-control {
+    border-color: $color;
+    &:focus { border-color: $focus-color; }
+  }
 }
 
 .form-success { @include state ($green, $green-800); }
