@@ -87,22 +87,13 @@ ol ul { margin-bottom: 0; }
 }
 
 .site-search {
+  display: inline-flex;
   margin: 0;
-
-  input {
-    width: 16rem;
-    padding: .4rem 0 0;
-    border: 0;
-    border-bottom: $form-border-width solid $grey-100;
-    border-radius: 0; // iOS
-    appearance: none; // iOS
-  }
 }
 
 .site-nav {
   display: inline-flex;
   margin-left: auto;
-  margin-top: .5rem;
 
   ul {
     display: inline-flex;
