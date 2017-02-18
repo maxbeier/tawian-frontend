@@ -118,6 +118,8 @@
 
          <h3>Form</h3>
 
+         <h4>Inline Form</h4>
+
          <form>
             <label>Name: <input type="text" placeholder="type your name here"></label>
             <label>Email: <input type="email" placeholder="and your email here"></label>
@@ -133,7 +135,7 @@
          </form>
 
 
-         <h4>Horizontal Form</h4>
+         <h4>Horizontal Form <small>(default on larger screens)</small></h4>
 
          <form class="form">
 
@@ -194,6 +196,7 @@
             </label>
 
             <button type="button" class="btn btn-primary full-width">Submit</button>
+
          </form>
 
 
@@ -293,6 +296,75 @@
                <textarea rows="3" class="form-control" required>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam placeat ratione nisi assumenda quo saepe quasi iste temporibus asperiores. Soluta cupuam at reprehenderit facere. Asperiores nulla rerum earum pariatur.</textarea>
                <span class="form-label">TEXTAREA</span>
             </label>
+
+         </form>
+
+
+         <h4>Vertical Form <small>(default on smaller screens)</small></h4>
+
+         <form class="form form-vertical">
+            <div class="grid">
+               <div class="cell">
+                  <label class="form-group">
+                     <input type="text" placeholder="type your name..." class="form-control">
+                     <span class="form-label">TEXT</span>
+                  </label>
+
+                  <label class="form-group">
+                     <div class="form-control">
+                        <label><input type="checkbox"> Checkbox 1</label>
+                        <label><input type="checkbox"> Checkbox 2</label>
+                        <label><input type="checkbox"> Checkbox 3</label>
+                        <label><input type="checkbox" disabled> Checkbox 4 disabled</label>
+                     </div>
+                     <span class="form-label">CHECKBOX</span>
+                  </label>
+
+                  <label class="form-group">
+                     <input type="email" class="form-control">
+                     <span class="form-label">EMAIL</span>
+                  </label>
+
+                  <label class="form-group">
+                     <input type="number" class="form-control">
+                     <span class="form-label">NUMBER</span>
+                  </label>
+
+                  <label class="form-group">
+                     <input type="file" class="form-control">
+                     <span class="form-label">FILE</span>
+                  </label>
+               </div>
+               <div class="cell">
+                  <label class="form-group">
+                     <select class="form-control">
+                        <option>Option One</option>
+                        <option>Option Two</option>
+                        <option>Option Three</option>
+                        <option>Option Four</option>
+                     </select>
+                     <span class="form-label">SELECT</span>
+                  </label>
+
+                  <label class="form-group">
+                     <div class="form-control">
+                        <label><input type="radio" name="radio"> Radio 1</label>
+                        <label><input type="radio" name="radio"> Radio 2</label>
+                        <label><input type="radio" name="radio"> Radio 3</label>
+                        <label><input type="radio" name="radio"> Radio 4</label>
+                        <label><input type="radio" name="radio" disabled> Radio 5 disabled</label>
+                     </div>
+                     <span class="form-label">RADIO</span>
+                  </label>
+
+                  <label class="form-group">
+                     <textarea rows="4" class="form-control">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam placeat ratione nisi assumenda quo saepe quasi iste temporibus asperiores.</textarea>
+                     <span class="form-label">TEXTAREA</span>
+                  </label>
+
+                  <button type="button" class="btn btn-primary full-width">Submit</button>
+               </div>
+            </div>
 
          </form>
 
@@ -542,8 +614,8 @@
 
             <div class="cell cell-4">
                <div class="btn-group full-width">
-                  <button class="btn btn-default">Too</button>
-                  <button class="btn btn-default">many</button>
+                  <button class="btn btn-default">Way</button>
+                  <button class="btn btn-default">too many</button>
                   <button class="btn btn-default">Elements</button>
                   <button class="btn btn-default">to fit in</button>
                   <button class="btn btn-default">one line</button>
@@ -621,7 +693,7 @@
             <span class="tag tag-success"><svg class="i"><use xlink:href="icons.svg#i-checkmark" /></svg> Yay</span>
          </p>
          <p>
-            Can be sized, e.g. <svg class="i i-medium"><use xlink:href="icons.svg#i-photo" /></svg> medium or <svg class="i i-large"><use xlink:href="icons.svg#i-home" /></svg> large.
+            Can be sized, e.g. <svg class="i"><use xlink:href="icons.svg#i-photo" /></svg> normal, <svg class="i i-medium"><use xlink:href="icons.svg#i-photo" /></svg> medium or <svg class="i i-large"><use xlink:href="icons.svg#i-photo" /></svg> large.
          </p>
 
          <p class="i-large">
@@ -812,7 +884,6 @@
 
 
          <h2>Basic</h2>
-
 
          <p>Use <code>.container</code> to centralize the main content.</p>
 
