@@ -16,15 +16,21 @@
   .card-header {
     display: block;
     padding: .55rem 1rem .45rem;
-    border-bottom: $border-width solid $grey-300;
     background-color: $grey-200;
     text-align: center;
     font-weight: bold;
     color: $grey-800;
   }
 
-  .card-body { padding: .8rem 1rem .7rem; }
-  pre.card-body { border: 0; }
+  .card-body {
+    padding: .8rem 1rem .7rem;
+    &:last-child { margin-bottom: 0; }
+  }
+
+  & > * + * {
+    border: 0;
+    border-top: $border-width solid $grey-300;
+  }
 
   &.card-success { @include card ($green); }
   &.card-info    { @include card ($cyan); }
