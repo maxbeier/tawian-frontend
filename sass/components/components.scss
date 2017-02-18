@@ -156,3 +156,34 @@ summary {
   padding-top: 2rem;
   margin-top: 2rem;
 }
+
+
+// Icons ------------------------------------------------------
+
+// svg,
+// svg symbol { overflow: visible; }
+
+.i {
+  width: .75rem;
+  height: .75rem;
+  fill: none;
+  font-size: inherit;
+  stroke: currentColor;
+  stroke-width: 4px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.i-medium .i,
+.i.i-medium {
+  width: 1.5rem;
+  height: 1.5rem;
+  stroke-width: 2px;
+}
+
+.i-large .i,
+.i.i-large {
+  width: 2rem;
+  height: 2rem;
+  stroke-width: 2px;
+}
