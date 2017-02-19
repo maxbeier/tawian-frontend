@@ -29,6 +29,7 @@
 
   & > * + * {
     border: 0;
+    border-radius: 0;
     border-top: $border-width solid $grey-300;
   }
 
