@@ -1,0 +1,38 @@
+// Faulty in Safari: http://stackoverflow.com/questions/40556442/safari-renders-wrong-after-details-element-when-use-rem-font-size
+
+details { margin-bottom: 1rem; }
+
+summary {
+  outline: none;
+  &:hover { cursor: pointer; }
+}
+
+details:not(.card) {
+  padding-left: 1rem;
+
+  summary {
+    margin-bottom: 1rem;
+    margin-left: -1rem;
+
+    &:hover {
+      background-color: $grey-100;
+      box-shadow: -.5rem -.1rem 0 .5rem $grey-100;
+    }
+  }
+}
+
+details.card {
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary::before {
+    content: '▶';
+    float: left;
+    color: $grey;
+  }
+
+  &[open] summary::before {
+    content: '▼';
+  }
+}

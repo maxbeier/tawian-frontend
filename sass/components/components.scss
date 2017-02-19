@@ -9,6 +9,7 @@
 @import 'tags';
 @import 'tooltips';
 @import 'icons';
+@import 'details';
 
 
 // Code ------------------------------------------------------
@@ -128,38 +129,6 @@ kbd {
   box-shadow: inset 0 -1px 0 $grey-300;
   font-size: .9em;
   line-height: 1;
-}
-
-
-// Details & Summary ------------------------------------------
-// Faulty in Safari: http://stackoverflow.com/questions/40556442/safari-renders-wrong-after-details-element-when-use-rem-font-size
-
-details { margin-bottom: 1rem; }
-
-summary {
-  outline: none;
-  &:hover { cursor: pointer; }
-}
-
-details:not(.card) {
-  padding-left: 1rem;
-  // &[open] summary { font-weight: bold; }
-
-  summary {
-    margin-bottom: 1rem;
-    margin-left: -1rem;
-
-    &:hover {
-      background-color: $grey-100;
-      box-shadow: -.5rem -.1rem 0 .5rem $grey-100;
-    }
-  }
-}
-
-details.card summary::-webkit-details-marker {
-  float: left;
-  margin-top: 0.4rem;
-  color: $grey;
 }
 
 // Footnotes --------------------------------------------------
