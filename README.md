@@ -10,11 +10,20 @@ Simple CSS framework with a markdowny look. Based on [hack](https://github.com/e
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cousine:400,400i,700,700i">
 ```
 
-or via [npm][npm] (font still has to be added to the html)
+or via [npm][npm]
 
 ```sh
-npm install --save tawian-frontend
+npm install --save tawian-frontend typeface-cousine
 ```
+
+And then, for example (as used in [curious-containers/cc-ui](https://github.com/curious-containers/cc-ui)):
+
+```js
+import 'tawian-frontend';
+import 'typeface-cousine';
+```
+
+To use the icons, you have to place [icons.svg](https://raw.githubusercontent.com/tawian/tawian-frontend/master/icons.svg) at the root of your public path (or anywhere else and adjust the path in the icons svg code).
 
 
 ## Preview
