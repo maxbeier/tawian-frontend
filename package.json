@@ -1,12 +1,13 @@
 {
   "name": "tawian-frontend",
   "version": "1.3.0",
-  "description": "Simple CSS framework with a markdowny look",
+  "description": "Simple CSS framework for Tawian",
   "main": "tawian-frontend.css",
   "style": "tawian-frontend.css",
   "files": [
     "LICENSE",
-    "tawian-frontend.css"
+    "tawian-frontend.css",
+    "icons.svg"
   ],
   "repository": "tawian/tawian-frontend",
   "author": "Maximilian Beier",
