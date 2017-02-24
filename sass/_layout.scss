@@ -15,7 +15,7 @@ select,
 textarea {
   color: $grey-900;
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.5;
   font-family: "Cousine", Menlo, Lucida Console, Courier New, monospace;
 }
 
@@ -25,7 +25,7 @@ h3,
 h4,
 h5,
 h6 {
-  line-height: 1.3em;
+  line-height: 1.25em;
   margin-top: 2rem;
   margin-bottom: 2rem;
 
@@ -42,8 +42,8 @@ h6 {
   & > small { color: $grey; }
 }
 
-h1 { font-size: 1.25rem; }
-h2 { font-size: 1.125rem; }
+h1 { font-size: 1.5rem; }
+h2 { font-size: 1.25rem; }
 
 p,
 ul,
@@ -56,12 +56,12 @@ blockquote {
   margin-bottom: 1rem;
 }
 
-p { margin-top: -.25em; }
-
 ul ul,
 ol ol,
 ul ol,
 ol ul { margin-bottom: 0; }
+
+small { font-size: .75em; }
 
 
 // Page -------------------------------------------------------
@@ -77,22 +77,20 @@ ol ul { margin-bottom: 0; }
 .site-header {
   display: flex;
   flex-wrap: wrap;
-  padding: 1.25rem 0 1rem;
+  align-items: center;
+  padding: .5rem 0;
 }
 
 .site-title {
   font-size: 2rem;
-  line-height: 1;
   color: $blue-grey-600;
 }
 
-.site-search {
-  display: inline-flex;
-  margin: 0;
-}
+.site-search { margin: 0; }
 
 .site-nav {
   display: inline-flex;
+  align-items: baseline;
   margin-left: auto;
 
   ul {

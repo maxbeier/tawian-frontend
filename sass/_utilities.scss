@@ -1,8 +1,8 @@
 // Space and Size ---------------------------------------------
 
 .narrow { padding: 0                              !important; }
-.inner { padding: .8rem 1rem .7rem                !important; }
-.inner-wide { padding: 1.6rem 2rem 1.4rem         !important; }
+.inner { padding: $box-padding                    !important; }
+.inner-wide { padding: 1rem 1rem .75rem           !important; }
 
 .p-t-0 { padding-top: 0                           !important; }
 .p-t-1 { padding-top: 1rem                        !important; }

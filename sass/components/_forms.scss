@@ -22,7 +22,6 @@ select {
   }
 }
 
-input, select { line-height: 1.15; }
 input[type="file"] { line-height: 1; }
 input::-webkit-file-upload-button {
   -webkit-appearance: none;
@@ -73,7 +72,7 @@ textarea {
   order: 1;
   position: relative;
   min-width: $form-label-width;
-  height: 2rem;
+  height: 2rem; // so border-bottom style works for textareas as well
   color: $grey-800;
   border-bottom: $form-border-width solid $grey-300;
   line-height: 2rem;

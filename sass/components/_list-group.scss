@@ -10,7 +10,7 @@
   & > * {
     display: block;
     margin: 0;
-    padding: .5rem .5rem .4rem;
+    padding: $box-padding;
     border: 0;
   }
 
@@ -30,6 +30,4 @@
     color: $white;
     background-color: $blue;
   }
-
-  .card > & { border: 0; } // Context with Cards
 }

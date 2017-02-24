@@ -5,7 +5,7 @@
 
 .alert {
   position: relative;
-  padding: .8rem 1rem .7rem;
+  padding: $box-padding;
   border: $border-width solid $grey-300;
   border-radius: $button-radius;
   color: $grey-300;
@@ -14,7 +14,7 @@
     position: absolute;
     right: 0;
     top: 0;
-    padding: 0.4rem 1rem;
+    padding: .15rem 1rem 0;
     opacity: .5;
     border: 0;
     background: none;

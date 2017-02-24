@@ -8,12 +8,11 @@
   @include tag ($grey);
 
   position: relative;
-  top: -0.1em;
+  top: -.1em;
   padding: 0 .25em;
   border-radius: 1px;
   font-size: .8em;
   font-weight: normal;
-  line-height: 1;
   white-space: nowrap;
   vertical-align: baseline;
   text-rendering: optimizeLegibility; // more readable with smaller font sizes

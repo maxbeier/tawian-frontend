@@ -1,7 +1,7 @@
 @import 'alerts';
-@import 'buttons';
 @import 'cards';
 @import 'forms';
+@import 'buttons';
 @import 'list-group';
 @import 'loading-indicator';
 @import 'progress-bar';
@@ -15,16 +15,24 @@
 // Code ------------------------------------------------------
 
 code {
-  padding: .2em .4em;
+  padding: .25em .25em .1em;
   border-radius: 2px;
   background-color: $grey-100;
 }
 
+samp {
+  display: inline-block;
+  margin-top: -.2em;
+  padding: .125em .4em 0;
+  background-color: $grey-50;
+}
+
+pre { padding: 1rem 1rem .9rem; }
+
 samp,
 pre {
-  padding: 1rem 1.5rem .9rem;
   border: $border-width solid $grey-300;
-  border-radius: $button-radius;
+  border-radius: 2px;
   white-space: pre-wrap;
   word-wrap: break-word;
   word-break: break-all;
@@ -40,13 +48,6 @@ pre code {
   padding: 0;
   color: inherit;
   background-color: transparent;
-}
-
-samp {
-  display: inline-block;
-  margin-top: -2px;
-  padding: 0 .5em;
-  background-color: $grey-50;
 }
 
 
@@ -89,7 +90,8 @@ figcaption {
 blockquote {
   overflow: hidden;
   padding-left: 1rem;
-  border-left: .5rem solid $grey-300;
+  border-left: .25rem solid $grey-300;
+  & > *:last-child { margin-bottom: 0; }
 }
 
 cite {
@@ -119,7 +121,7 @@ abbr[title] {
 
 kbd {
   display: inline-block;
-  padding: .25em .4em;
+  padding: .1em .4em 0;
   vertical-align: middle;
   color: $grey-800;
   border: solid 1px $grey-200;
@@ -128,7 +130,6 @@ kbd {
   background-color: $grey-50;
   box-shadow: inset 0 -1px 0 $grey-300;
   font-size: .9em;
-  line-height: 1;
 }
 
 // Footnotes --------------------------------------------------

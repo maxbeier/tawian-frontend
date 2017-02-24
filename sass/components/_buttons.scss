@@ -1,6 +1,7 @@
 // top right bottom left
 $button-border-width: 2px;
 $border-strength: .2;
+$button-padding: .25rem .75rem .15rem;
 $dark: rgba(0,0,0,$border-strength);
 $light: rgba(255,255,255,$border-strength);
 $border-outset: $light $dark $dark $light;
@@ -25,7 +26,7 @@ $border-inset: $dark $light $light $dark;
 
 .btn {
   position: relative;
-  padding: .6rem 1rem .5rem;
+  padding: $button-padding;
   border-width: $button-border-width;
   border-style: solid;
   border-radius: $button-radius;
@@ -33,7 +34,6 @@ $border-inset: $dark $light $light $dark;
   outline: none;
   cursor: pointer;
   user-select: none;
-  line-height: 1;
   color: $white;
 
   &:hover,
@@ -114,18 +114,14 @@ $border-inset: $dark $light $light $dark;
 // Button Group -----------------------------------------------
 
 .btn-addon {
-  padding: .8rem 1rem .7rem;
-  border: $border-width solid transparent;
-  line-height: 1;
+  padding: $button-padding;
+  border: $button-border-width solid transparent;
 
   &:first-child { padding-left: 0; }
 }
 
 .btn-group {
-  display: inline-flex;
-  flex-wrap: wrap;
-  align-items: center;
-  vertical-align: top;
+  @extend .input-group;
 
   .btn {
     flex-grow: 1;

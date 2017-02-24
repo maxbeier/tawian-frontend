@@ -15,7 +15,7 @@
 
   .card-header {
     display: block;
-    padding: .55rem 1rem .45rem;
+    padding: $box-padding;
     background-color: $grey-200;
     text-align: center;
     font-weight: bold;
@@ -23,7 +23,7 @@
   }
 
   .card-body {
-    padding: .8rem 1rem .7rem;
+    padding: $box-padding;
     &:last-child { margin-bottom: 0; }
   }
 
