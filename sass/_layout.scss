@@ -19,6 +19,13 @@ textarea {
   font-family: "Cousine", Menlo, Lucida Console, Courier New, monospace;
 }
 
+code,
+pre,
+samp,
+kbd {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
 h1,
 h2,
 h3,
@@ -143,6 +150,12 @@ small { font-size: .75em; }
   label {
     cursor: pointer;
     color: $blue-grey-600;
+  }
+
+  svg {
+    width: 2rem;
+    height: 2rem;
+    stroke-width: 2.5px;
   }
 
   & + input[type=checkbox] { display: none; }

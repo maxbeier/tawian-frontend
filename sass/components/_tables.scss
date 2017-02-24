@@ -49,9 +49,9 @@ thead.text-left > tr > th { text-align: left; }
 
 // States -----------------------------------------------------
 
-@mixin cell-border ($borderColor) {
-  border-top-color: $borderColor;
-  border-bottom-color: $borderColor;
+@mixin cell-border ($border-color) {
+  border-top-color: $border-color;
+  border-bottom-color: $border-color;
 }
 
 table {

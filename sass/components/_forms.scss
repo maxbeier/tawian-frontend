@@ -22,7 +22,11 @@ select {
   }
 }
 
-input[type="file"] { line-height: 1; }
+input[type="file"] {
+  line-height: 1;
+  background-color: transparent; // Edge
+}
+
 input::-webkit-file-upload-button {
   -webkit-appearance: none;
   -webkit-border-radius: 0;
@@ -166,6 +170,13 @@ select.form-control { border-radius: 0; }
   color: $grey;
 }
 
+// Input Group ------------------------------------------------
+
+.input-group {
+  display: inline-flex;
+  flex-wrap: wrap;
+  // & > *:not(:first-child) { margin-left: -2px; } // maybe?
+}
 
 // Vertical / Responsive --------------------------------------
 

@@ -112,6 +112,10 @@ mark {
     background-color: $yellow-600;
     box-shadow: 0 -1px 0 3px $yellow-600;
   }
+
+  samp, kbd, code {
+    background-color: $yellow-50;
+  }
 }
 
 abbr[title] {
