@@ -1,7 +1,7 @@
 @mixin tag ($color) {
   color: $white;
   background-color: $color;
-  box-shadow: 0 -1px 0 3px $color;
+  box-shadow: 0 -1px 0 3px $color, inset 0 0 0 1px $color; // second shadow to fix a glitch in Edge
 }
 
 .tag {

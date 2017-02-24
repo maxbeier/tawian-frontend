@@ -28,13 +28,13 @@ input[type="file"] {
 }
 
 input::-webkit-file-upload-button {
-  -webkit-appearance: none;
-  -webkit-border-radius: 0;
   padding: .2rem .3rem .05rem;
   background-color: $white;
   border: 2px solid $grey-400;
   border-radius: $button-radius;
 }
+
+input::placeholder { color: $grey-400; }
 
 select {
   padding-right: 1.8rem;
@@ -46,6 +46,8 @@ select {
     background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%2214%22%20viewBox%3D%220%200%2029%2014%22%20width%3D%2229%22%3E%3Cpath%20fill%3D%22%239e9e9e%22%20d%3D%22M9.37727%203.625l5.08154%206.93523L19.54036%203.625%22%2F%3E%3C%2Fsvg%3E');
   }
 }
+
+select::-ms-expand { display: none; }
 
 textarea {
   height: auto;
@@ -65,7 +67,6 @@ textarea {
 .form-group {
   display: flex;
   flex-wrap: wrap;
-  overflow: auto; // TODO: why?
   margin-bottom: 2rem;
 }
 
