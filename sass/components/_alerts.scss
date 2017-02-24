@@ -1,14 +1,14 @@
-@mixin alert ($color) {
+@mixin alert ($color, $background-color) {
    color: $color;
    border-color: $color;
+   background-color: $background-color;
 }
 
 .alert {
   position: relative;
   padding: $box-padding;
-  border: $border-width solid $grey-300;
+  border: $border-width solid;
   border-radius: $button-radius;
-  color: $grey-300;
 
   .close {
     position: absolute;
@@ -29,7 +29,8 @@
   }
 }
 
-.alert-success { @include alert ($green); }
-.alert-info    { @include alert ($cyan); }
-.alert-warning { @include alert ($orange); }
-.alert-error   { @include alert ($red); }
+.alert         { @include alert ($grey-700, $grey-50); }
+.alert-success { @include alert ($green-700, $green-50); }
+.alert-info    { @include alert ($cyan-700, $cyan-50); }
+.alert-warning { @include alert ($orange-700, $orange-50); }
+.alert-error   { @include alert ($red-700, $red-50); }
