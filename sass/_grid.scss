@@ -57,6 +57,14 @@
 .grid-narrow { @include spacing (0); }
 .grid-wide   { @include spacing (2rem); }
 
+.grid-inline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+
+  & > *:not(:last-child) { margin-right: 1rem; }
+}
+
 
 // Responsiveness ---------------------------------------------
 
@@ -69,5 +77,14 @@
   .cell {
     flex: 0 0 auto;
     min-width: auto;
+  }
+
+  .grid-inline {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+
+    & > * { flex: 1 1 100%; }
+    & > *:not(:last-child) { margin: 0 0 .75rem; }
   }
 }
