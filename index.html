@@ -27,10 +27,10 @@
    <div class="container">
 
       <header class="site-header dashed-bottom">
-         <a class="site-title" href="#">Title</a>
+         <a class="site-title" href="#">Page Title</a>
          <nav class="responsive-nav">
             <label for="navigation-toggle">
-               <svg class="i i-medium"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="icons.svg#i-menu"></use></svg>
+               <svg class="i"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="icons.svg#i-menu"></use></svg>
             </label>
          </nav>
          <input type="checkbox" id="navigation-toggle">
@@ -104,7 +104,7 @@
 
          <h3>Code</h3>
 
-         <p>You can use <code>inline code</code>, <samp>inline sample output</samp> or code blocks.</p>
+         <p>You can use <code>inline code</code>, <samp>inline sample output</samp> or code blocks. Use <code>.scroll</code> to prevent code wrapping.</p>
 
          <div class="highlight language-shell" data-lang="shell"><pre><code><span class="k">while </span><span class="nb">true</span>; <span class="k">do</span> <span class="o">{</span> <span class="nb">echo</span> -e <span class="s2">"HTTP/1.1 200 OK</span><span class="se">\r\n</span><span class="s2">"</span>; cat index.html; <span class="o">}</span> | nc -l 8080; <span class="k">done</span></code></pre>
          </div>
@@ -848,12 +848,13 @@
 
          <h3>Alerts</h3>
 
-         <p>
-            <p class="alert alert-success">Success message</p>
-            <p class="alert alert-info">Info message</p>
-            <p class="alert alert-warning">Warning message</p>
-            <p class="alert alert-error">Error message <button class="close">×</button></p>
-         </p>
+         <div class="grid">
+            <div class="cell cell-4"><p class="alert">Default message</p></div>
+            <div class="cell cell-4"><p class="alert alert-info">Info message</p></div>
+            <div class="cell cell-4"><p class="alert alert-warning">Warning message</p></div>
+            <div class="cell cell-6"><p class="alert alert-success">Success message <button class="close">×</button></p></div>
+            <div class="cell cell-6"><p class="alert alert-error">Error message <button class="close">×</button></p></div>
+         </div>
 
 
          <h3>Images and Figures</h3>
@@ -948,6 +949,17 @@
             </div>
 
          </div>
+
+         <h3>Inline Grid</h3>
+
+         <div class="grid-inline m-b-2">
+            <input type="text" placeholder="use `cell` to let an element grow" class="cell">
+            <button type="button" class="btn btn-default">other elements</button>
+            <span>take the size they need</span>
+         </div>
+
+
+         <h3>Modifiers</h3>
 
          <div class="grid">
             <div class="cell">
