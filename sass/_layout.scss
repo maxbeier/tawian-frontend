@@ -85,7 +85,7 @@ small { font-size: .75em; }
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  padding: .5rem 0;
+  padding: .65rem 0 .35rem;
 }
 
 .site-title {
@@ -99,6 +99,7 @@ small { font-size: .75em; }
   display: inline-flex;
   align-items: baseline;
   margin-left: auto;
+  padding-bottom: .4rem;
 
   ul {
     display: inline-flex;

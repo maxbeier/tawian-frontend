@@ -29,6 +29,7 @@ details.card {
   summary::before {
     content: '▶';
     float: left;
+    padding-right: .75rem;
     color: $grey;
   }
 
