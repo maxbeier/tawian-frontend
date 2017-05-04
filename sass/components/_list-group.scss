@@ -1,4 +1,4 @@
-.list-striped > *:nth-child(even) {
+.list-striped > *:nth-child(even):not(.btn) {
   background-color: $grey-100;
 }
 
@@ -17,6 +17,12 @@
   & > a,
   & > button { width: 100%; }
 
+  button:not(.btn) {
+    @extend a;
+    text-align: left;
+    background-color: $white;
+  }
+
   & > li:before { display: none; }
 
   & > *:not(:last-child) {
@@ -29,7 +35,8 @@
     background-color: $grey-200;
   }
 
-  & > .active {
+  & > .active.active,
+  & > .active.active:hover {
     color: $white;
     background-color: $blue;
   }
