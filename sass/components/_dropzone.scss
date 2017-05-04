@@ -1,0 +1,16 @@
+.dropzone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10rem;
+  padding: 1rem;
+  border: 2px dashed $grey-300;
+  text-align: center;
+  color: $grey-400;
+
+  &.active,
+  &.rejected { color: $grey; }
+
+  &.active   { background-color: $grey-50; }
+  &.rejected { background-color: $red-50; }
+}
