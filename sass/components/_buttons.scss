@@ -88,6 +88,7 @@ $border-inset: $dark $light $light $dark;
   &:focus {
     border-color: transparent;
     color: $blue-700;
+    text-decoration: underline;
   }
 }
 
