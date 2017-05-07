@@ -1,5 +1,8 @@
 // Basic Styles -----------------------------------------------
 
+// check vertical rhythm (with a baseline of 24px)
+// body { background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAAYCAYAAADQ+yzZAAAAF0lEQVQYV2NkgALG4cEoLy//39nZyQgAHvQEGSEIElQAAAAASUVORK5CYII=); }
+
 * {
   box-sizing: border-box;
   text-rendering: geometricPrecision;
@@ -32,9 +35,9 @@ h3,
 h4,
 h5,
 h6 {
-  line-height: 1.25em;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  line-height: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 
   &.pure,
   .grid & {
@@ -46,11 +49,18 @@ h6 {
     margin-bottom: 1rem;
   }
 
-  & > small { color: $grey; }
+  & > small {
+    color: $grey;
+    line-height: 1.5;
+  }
 }
 
-h1 { font-size: 1.5rem; }
-h2 { font-size: 1.25rem; }
+h1 {
+  font-size: 1.5rem;
+}
+h2 {
+  font-size: 1.25rem;
+}
 
 p,
 ul,
@@ -60,7 +70,7 @@ form,
 table,
 blockquote {
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 ul ul,
@@ -85,7 +95,7 @@ small { font-size: .75em; }
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  padding: .65rem 0 .35rem;
+  padding: .875rem 0 .625rem;
 }
 
 .site-title {
@@ -99,7 +109,7 @@ small { font-size: .75em; }
   display: inline-flex;
   align-items: baseline;
   margin-left: auto;
-  padding-bottom: .4rem;
+  margin-top: -.25rem; // diff of .site-header padding
 
   ul {
     display: inline-flex;
@@ -190,13 +200,13 @@ small { font-size: .75em; }
 }
 
 .site-main {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 .site-footer {
-  margin-top: 1rem;
-  padding: 2rem 0;
+  margin-top: 3rem;
+  padding: 3rem 0;
   color: $grey-400;
   text-align: center;
 

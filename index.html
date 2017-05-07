@@ -388,7 +388,6 @@
          <h3>Table</h3>
 
          <table class="table-fixed">
-            <caption>Table with fixed layout and caption</caption>
             <thead>
                <tr>
                   <th>states</th>
@@ -417,6 +416,7 @@
                   <td>60</td>
                </tr>
             </tbody>
+            <caption>Table with fixed layout and caption</caption>
          </table>
 
          <div class="grid">
@@ -540,38 +540,44 @@
 
          <h3>Progress bar</h3>
 
-         <p>
-            <div class="progress-bar progress-bar-show-percent">
-               <div style="width: 40%;" data-filled="Loaded 40%"></div>
+         <div class="grid">
+            <div class="cell">
+               <p>
+                  <div class="progress-bar progress-bar-show-percent">
+                     <div style="width: 40%;" data-filled="Loaded 40%"></div>
+                  </div>
+               </p>
+
+               <p>
+                  <div class="progress-bar progress-success">
+                     <div style="width: 20%;"></div>
+                  </div>
+               </p>
             </div>
-         </p>
+            <div class="cell">
+               with <code>.narrow</code>
+               <div class="m-b-1">
+                  <div class="progress-bar progress-error narrow">
+                     <div style="width: 30%;"></div>
+                  </div>
+               </div>
+
+               <div class="m-b-1">
+                  <div class="progress-bar progress-warning narrow">
+                     <div style="width: 60%;"></div>
+                  </div>
+               </div>
+
+               <div class="m-b-1">
+                  <div class="progress-bar progress-info narrow">
+                     <div style="width: 80%;"></div>
+                  </div>
+               </div>
+            </div>
+         </div>
 
          <p>
-            <div class="progress-bar progress-success">
-               <div style="width: 20%;"></div>
-            </div>
-         </p>
-
-         <p>
-            <div class="progress-bar progress-error">
-               <div style="width: 30%;"></div>
-            </div>
-         </p>
-
-         <p>
-            <div class="progress-bar progress-warning">
-               <div style="width: 60%;"></div>
-            </div>
-         </p>
-
-         <p>
-            <div class="progress-bar progress-info">
-               <div style="width: 80%;"></div>
-            </div>
-         </p>
-
-         <p>
-            For nicer progress bars consider <a href="https://kimmobrunfeldt.github.io/progressbar.js/" title="progressbar.js">progressbar.js</a>.
+            For advanced progress bars consider <a href="https://kimmobrunfeldt.github.io/progressbar.js/" title="progressbar.js">progressbar.js</a>.
          </p>
 
 
@@ -865,9 +871,9 @@
             <div class="cell">
                <div class="card">
                   <header class="card-header">with image</header>
-                  <img class="full-width" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAABCAYAAAAb4BS0AAAAEElEQVR42mNUnPb5PwMUAAAajQKrlc3KqAAAAABJRU5ErkJggg==" alt="Image" height="100">
+                  <img class="full-width" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAABCAYAAAAb4BS0AAAAEElEQVR42mNUnPb5PwMUAAAajQKrlc3KqAAAAABJRU5ErkJggg==" alt="Image" height="109">
                   <div class="card-body">and a second body</div>
-                  <samp class="card-body full-width">echo "and a third"</samp>
+                  <pre class="card-body">echo "and a third"</pre>
                </div>
             </div>
          </div>

@@ -1,8 +1,8 @@
 @import 'alerts';
-@import 'cards';
 @import 'forms';
 @import 'buttons';
 @import 'list-group';
+@import 'cards'; // styles contained .list-group
 @import 'loading-indicator';
 @import 'progress-bar';
 @import 'tables';
@@ -16,19 +16,19 @@
 // Code ------------------------------------------------------
 
 code {
-  padding: .25em .25em .1em;
+  padding: .25em .25em .125em;
   border-radius: 2px;
   background-color: $grey-100;
 }
 
 samp {
   display: inline-block;
-  margin-top: -.2em;
-  padding: .125em .4em 0;
+  margin-top: -3px;
+  padding: 1px .25em 0;
   background-color: $grey-50;
 }
 
-pre { padding: 1rem 1rem .9rem; }
+pre { padding: calc(.75rem - 1px) 1rem; }
 
 samp,
 pre {
@@ -140,6 +140,6 @@ kbd {
 // Footnotes --------------------------------------------------
 
 .footnotes {
-  padding-top: 2rem;
-  margin-top: 2rem;
+  padding-top: 3rem;
+  margin-top: 1.5rem;
 }

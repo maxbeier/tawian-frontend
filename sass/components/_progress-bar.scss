@@ -1,6 +1,8 @@
 .progress-bar {
-  height: .5rem;
+  height: 1rem;
   background-color: $grey-300;
+
+  &.narrow { height: 0.5rem; }
 
   &.progress-bar-show-percent {
     margin-top: 2rem;
@@ -22,7 +24,7 @@
         white-space: nowrap;
         position: absolute;
         border: 6px solid transparent;
-        top: -38px;
+        top: -36px;
         right: 0;
         transform: translateX(50%);
       }

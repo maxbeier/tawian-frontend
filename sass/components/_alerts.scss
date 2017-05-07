@@ -6,19 +6,19 @@
 
 .alert {
   position: relative;
-  padding: $box-padding;
+  padding: calc(.5rem - 2px) .75rem .25rem;
   border: $border-width solid;
   border-radius: $button-radius;
 
   .close {
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: .15rem .75rem 0;
+    float: right;
+    margin: -.5rem -.75rem 0 0;
+    padding: calc(.5rem + 1px) .75rem 0;
     opacity: .5;
     border: 0;
     background: none;
     font-size: 1.5rem;
+    line-height: 1;
     color: inherit;
     cursor: pointer;
 

@@ -10,12 +10,17 @@
   & > * {
     display: block;
     margin: 0;
-    padding: $box-padding;
+    padding: calc(.5rem - 1px) .5rem .25rem;
     border: 0;
+
+    &:first-child { padding-top: calc(.5rem - 2px); }
   }
 
   & > a,
-  & > button { width: 100%; }
+  & > button {
+    width: 100%;
+    border-radius: 0;
+  }
 
   button:not(.btn) {
     @extend a;
