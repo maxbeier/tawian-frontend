@@ -53,8 +53,8 @@
   }
 
   @mixin tooltip-state ($color) {
-     color: $white;
-     background-color: $color;
+    color: $white;
+    background-color: $color;
   }
 
   &.tooltip-active:after  { @include tooltip-state ($blue); }
