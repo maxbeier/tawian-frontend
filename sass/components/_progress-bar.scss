@@ -43,6 +43,7 @@
     color: $white;
   }
 
+  &.progress-primary > div { background-color: $blue; }
   &.progress-success > div { background-color: $green; }
   &.progress-info    > div { background-color: $cyan; }
   &.progress-warning > div { background-color: $orange; }
