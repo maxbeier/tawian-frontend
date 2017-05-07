@@ -35,12 +35,16 @@
     position: relative;
     height: 100%;
     width: 0;
+    max-width: 100%;
     background-color: $grey;
     transition: width .3s ease;
+    text-align: center;
+    font-size: 12px;
+    color: $white;
   }
 
   &.progress-success > div { background-color: $green; }
-  &.progress-info > div { background-color: $cyan; }
+  &.progress-info    > div { background-color: $cyan; }
   &.progress-warning > div { background-color: $orange; }
-  &.progress-error > div { background-color: $red; }
+  &.progress-error   > div { background-color: $red; }
 }
