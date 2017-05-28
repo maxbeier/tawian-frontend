@@ -53,16 +53,16 @@
   }
 }
 
-.grid        { @include spacing (1.5rem); }
+.grid        { @include spacing (1rem); }
 .grid-narrow { @include spacing (0); }
-.grid-wide   { @include spacing (3rem); }
+.grid-wide   { @include spacing (2rem); }
 
 .grid-inline {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
 
-  & > *:not(:last-child) { margin-right: 1.5rem; }
+  & > *:not(:last-child) { margin-right: 1rem; }
 }
 
 
