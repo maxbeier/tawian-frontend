@@ -1,6 +1,6 @@
 {
   "name": "tawian-frontend",
-  "version": "2.1.3",
+  "version": "2.1.4",
   "description": "Simple CSS framework for Tawian",
   "main": "tawian-frontend.css",
   "style": "tawian-frontend.css",
