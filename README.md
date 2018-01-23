@@ -1,4 +1,4 @@
-# [Tawian Frontend](http://tawian.io/tawian-frontend/) [![npm package][npm-badge]][npm]
+# [Tawian Frontend](http://maxbeier.github.io/tawian-frontend) [![npm package][npm-badge]][npm]
 
 Simple CSS framework with a markdowny touch. Intended for developer facing applications.
 
@@ -6,7 +6,7 @@ Simple CSS framework with a markdowny touch. Intended for developer facing appli
 ## Usage
 
 ```html
-<link rel="stylesheet" href="http://tawian.io/tawian-frontend/tawian-frontend.css">
+<link rel="stylesheet" href="http://maxbeier.github.io/tawian-frontend/tawian-frontend.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cousine:400,400i,700,700i">
 ```
 
@@ -23,12 +23,12 @@ import 'tawian-frontend';
 import 'typeface-cousine';
 ```
 
-To use the icons, you have to place [icons.svg](https://raw.githubusercontent.com/tawian/tawian-frontend/master/icons.svg) at the root of your public path (or anywhere else and adjust the path in the icons svg code) or inline them in your HTML to make them work in Edge.
+To use the icons, you have to place [icons.svg](https://raw.githubusercontent.com/maxbeier/tawian-frontend/master/icons.svg) at the root of your public path (or anywhere else and adjust the path in the icons svg code) or inline them in your HTML to make them work in Edge.
 
 
 ## Preview
 
-[![Screenshot](https://raw.githubusercontent.com/tawian/tawian-frontend/master/screenshot.png)](http://tawian.io/tawian-frontend/)
+[![Screenshot](https://raw.githubusercontent.com/maxbeier/tawian-frontend/master/screenshot.png)](http://maxbeier.github.io/tawian-frontend/)
 
 
 ## Build

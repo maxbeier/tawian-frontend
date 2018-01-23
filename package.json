@@ -9,15 +9,15 @@
     "tawian-frontend.css",
     "icons.svg"
   ],
-  "repository": "tawian/tawian-frontend",
+  "repository": "maxbeier/tawian-frontend",
   "author": "Maximilian Beier",
   "license": "MIT",
   "keywords": [
     "frontend",
     "framework"
   ],
-  "bugs": "https://github.com/tawian/tawian-frontend/issues",
-  "homepage": "http://tawian.io/tawian-frontend/",
+  "bugs": "https://github.com/maxbeier/tawian-frontend/issues",
+  "homepage": "http://maxbeier.github.io/tawian-frontend",
   "scripts": {
     "build": "sass sass/index.scss --style compressed | postcss --use autoprefixer > tawian-frontend.css",
     "watch": "fswatch -o sass/* | xargs -n1 sh -c 'sass sass/index.scss --style compressed | postcss --use autoprefixer > tawian-frontend.css'",
